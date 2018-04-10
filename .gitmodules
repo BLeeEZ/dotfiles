@@ -1,0 +1,6 @@
+[submodule "use-package"]
+	path = use-package
+	url = git@github.com:BLeeEZ/use-package.git
+[submodule "xah-fly-keys"]
+	path = xah-fly-keys
+	url = git@github.com:BLeeEZ/xah-fly-keys.git
