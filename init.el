@@ -1,29 +1,26 @@
 ;; Since the default package archive doesn't include everything necessary, the marmalade, and melpa repositories are also added.
-(load "package")
 (package-initialize)
+
+;; Install use-package for managing packages
+(add-to-list 'load-path "~/.emacs.d/use-package")
+(require 'use-package)
 
 ;; Configure proxy servers to be used
 (load-file "~/.emacs.d/proxy_conf.el")
 
+(require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-
-;; When Emacs boots, check to make sure all of the packages defined in abedra/packages are installed. If not, have ELPA take care of it.
-(if (not (package-installed-p 'use-package))
-    (progn
-      (package-refresh-contents)
-      (package-install 'use-package)))
-
-(require 'use-package)
-
-
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (tango-dark))))
+ '(custom-enabled-themes (quote (tango-dark)))
+ '(package-selected-packages
+   (quote
+    (dired-subtree projectile web-mode auto-complete powerline which-key tabbar))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -33,7 +30,7 @@
 
 
 
-;; I want to skip straight to the scratch buffer. This turns off the splash screen and puts me straight into the scratch buffer. I don't really care to have anything in there either, so turn off the message while we're at it. Since I end up using org-mode most of the time, set the default mode accordingly. 
+;; I want to skip straight to the scratch buffer. This turns off the splash screen and puts me straight into the scratch buffer. I don't really care to have anything in there either, so turn off the message while we're at it. Since I end up using org-mode most of the time, set the default mode accordingly.
 (setq inhibit-splash-screen t
       initial-scratch-message nil
       initial-major-mode 'org-mode)
@@ -88,19 +85,17 @@
 ;; --------------------------------------
 ;;  Eronomy mode with Xah Fly Keys
 ;; --------------------------------------
-;; https://github.com/xahlee/xah-fly-keys
+;; https://github.com/BLeeEZ/xah-fly-keys
 ;; http://ergoemacs.org/misc/ergoemacs_vi_mode.html
 ;; http://ergoemacs.org/misc/xah-fly-keys_customization.html
-(use-package xah-fly-keys
-  :init (setq xah-fly-use-control-key nil)
-  :config (progn
-	    (xah-fly-keys-set-layout "qwertz")
-	    (xah-fly-keys 1)
-	    ;; custom bindungs
-	    (define-key xah-fly--tab-key-map (kbd "j") 'tabbar-backward-tab) ;;[lead TAB j]
-	    (define-key xah-fly--tab-key-map (kbd "l") 'tabbar-forward-tab)  ;;[lead TAB l]
-	    )
-  :ensure t)
+(add-to-list 'load-path "~/.emacs.d/xah-fly-keys/")
+(require 'xah-fly-keys)
+(setq xah-fly-use-control-key nil)
+(xah-fly-keys-set-layout "qwertz")
+(xah-fly-keys 1)
+;; custom bindungs
+(define-key xah-fly--tab-key-map (kbd "j") 'tabbar-backward-tab) ;;[lead TAB j]
+(define-key xah-fly--tab-key-map (kbd "l") 'tabbar-forward-tab)  ;;[lead TAB l]
 
 ;; Activates a window to show available shortcuts
 ;;https://github.com/justbur/emacs-which-key
