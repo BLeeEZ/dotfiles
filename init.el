@@ -158,6 +158,10 @@
 (use-package helm
   :config
   (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+  (define-key helm-map (kbd "C-i") 'helm-previous-line)
+  (define-key helm-map (kbd "C-j") 'helm-beginning-of-buffer)
+  (define-key helm-map (kbd "C-k") 'helm-next-line)
+  (define-key helm-map (kbd "C-l") 'helm-end-of-buffer)
   (define-key xah-fly-leader-key-map (kbd "f") 'helm-buffers-list)
   (define-key xah-fly-c-keymap (kbd "i") 'helm-bookmarks)
   (define-key xah-fly-c-keymap (kbd "e") 'helm-find-files)
