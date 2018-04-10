@@ -20,15 +20,13 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(package-selected-packages
    (quote
-    (dired-subtree projectile web-mode auto-complete powerline which-key tabbar))))
+    (helm dired-subtree projectile web-mode auto-complete powerline which-key tabbar))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-
 
 ;; I want to skip straight to the scratch buffer. This turns off the splash screen and puts me straight into the scratch buffer. I don't really care to have anything in there either, so turn off the message while we're at it. Since I end up using org-mode most of the time, set the default mode accordingly.
 (setq inhibit-splash-screen t
@@ -94,8 +92,8 @@
 (xah-fly-keys-set-layout "qwertz")
 (xah-fly-keys 1)
 ;; custom bindungs
-(define-key xah-fly--tab-key-map (kbd "j") 'tabbar-backward-tab) ;;[lead TAB j]
-(define-key xah-fly--tab-key-map (kbd "l") 'tabbar-forward-tab)  ;;[lead TAB l]
+(define-key xah-fly--tab-key-map (kbd "j") 'tabbar-backward-tab) ;; [lead TAB j]
+(define-key xah-fly--tab-key-map (kbd "l") 'tabbar-forward-tab)  ;; [lead TAB l]
 
 ;; Activates a window to show available shortcuts
 ;;https://github.com/justbur/emacs-which-key
@@ -111,7 +109,6 @@
   :config (powerline-default-theme)
   :ensure t)
 
-
 ;; --------------------------------------
 ;;  Config auto complete.
 ;; --------------------------------------
@@ -124,7 +121,6 @@
 	    ;; (after (:ruby-mode) (add-to-list 'ac-modes 'ruby-mode))
 	    (ac-config-default))
   :ensure t)
-
 
 ;; --------------------------------------
 ;;  Web mode for displaying html and php files nice and autocomplete
@@ -155,3 +151,24 @@
 	    (define-key dired-mode-map "i" 'dired-subtree-insert)
 	    (define-key dired-mode-map ";" 'dired-subtree-remove))
   :ensure t)
+
+;; helm
+;; https://github.com/emacs-helm/helm/wiki#install
+(use-package helm
+  :config
+  (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+  (define-key xah-fly-leader-key-map (kbd "f") 'helm-buffers-list)
+  (define-key xah-fly-c-keymap (kbd "i") 'helm-bookmarks)
+  (define-key xah-fly-c-keymap (kbd "e") 'helm-find-files)
+  (define-key xah-fly-t-keymap (kbd "l") 'helm-show-kill-ring)
+  (define-key xah-fly-key-map (kbd "a") 'helm-M-x)
+  :ensure t)
+
+;; Global key bindings for ergonomic movement
+(global-set-key (kbd "C-i") 'previous-line)
+(global-set-key (kbd "C-j") 'backward-char)
+(global-set-key (kbd "C-k") 'next-line)
+(global-set-key (kbd "C-l") 'forward-char)
+(global-set-key (kbd "C-u") 'backward-word)
+(global-set-key (kbd "C-o") 'forward-word)
+   
