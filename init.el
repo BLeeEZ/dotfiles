@@ -66,8 +66,8 @@
 ;; Display folder structure
 (use-package dired
   ;; :config (add-hook 'dired-mode-hook 'dired-hide-details-mode)
-  :config (setq-default dired-listing-switches "-lhva")
-  )
+  :config
+  (setq-default dired-listing-switches "-lhva"))
 
 ;; Tab menu on top of the screen
 ;; https://www.emacswiki.org/emacs/TabBarMode#toc3
@@ -98,58 +98,59 @@
 ;; Activates a window to show available shortcuts
 ;;https://github.com/justbur/emacs-which-key
 (use-package which-key
-  :config (progn
-	    (which-key-mode)
-	    (which-key-setup-side-window-right))
+  :config
+  (which-key-mode)
+  (which-key-setup-side-window-right)
   :ensure t)
 
 ;; Powerline on the bottom of the screen
 ;;https://github.com/milkypostman/powerline
 (use-package powerline
-  :config (powerline-default-theme)
+  :config
+  (powerline-default-theme)
   :ensure t)
 
 ;; --------------------------------------
 ;;  Config auto complete.
 ;; --------------------------------------
 (use-package auto-complete
-  :config (progn
-	    (use-package auto-complete-config)
-	    ;; (after (:ac-html-bootstrap) (add-to-list 'ac-modes 'slime-repl-mode))
-	    ;; (after (:js2-mode) (add-to-list 'ac-modes 'js2-mode))
-	    ;; (after (:js-mode) (add-to-list 'ac-modes 'js-mode))
-	    ;; (after (:ruby-mode) (add-to-list 'ac-modes 'ruby-mode))
-	    (ac-config-default))
+  :config
+  (use-package auto-complete-config)
+  ;; (after (:ac-html-bootstrap) (add-to-list 'ac-modes 'slime-repl-mode))
+  ;; (after (:js2-mode) (add-to-list 'ac-modes 'js2-mode))
+  ;; (after (:js-mode) (add-to-list 'ac-modes 'js-mode))
+  ;; (after (:ruby-mode) (add-to-list 'ac-modes 'ruby-mode))
+  (ac-config-default)
   :ensure t)
 
 ;; --------------------------------------
 ;;  Web mode for displaying html and php files nice and autocomplete
 ;; --------------------------------------
 (use-package web-mode
-  :config (progn
-	    (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-	    (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-	    (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-	    (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-	    (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-	    (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-	    (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-	    (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
+  :config
+  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   :ensure t)
 
 ;; Projectile
 ;; https://github.com/bbatsov/projectile
 (use-package projectile
-  :config (progn
-	    (projectile-mode))
+  :config
+  (projectile-mode)
   :ensure t)
 
 ;; Dired-Subtree
 ;; https://github.com/Fuco1/dired-hacks
 (use-package dired-subtree
-  :config (progn
-	    (define-key dired-mode-map "i" 'dired-subtree-insert)
-	    (define-key dired-mode-map ";" 'dired-subtree-remove))
+  :config
+  (define-key dired-mode-map "i" 'dired-subtree-insert)
+  (define-key dired-mode-map ";" 'dired-subtree-remove)
   :ensure t)
 
 ;; helm
