@@ -20,7 +20,7 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(package-selected-packages
    (quote
-    (helm dired-subtree projectile web-mode auto-complete powerline which-key tabbar))))
+    (xah-fly-keys helm dired-subtree projectile web-mode auto-complete powerline which-key tabbar))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -86,14 +86,16 @@
 ;; https://github.com/BLeeEZ/xah-fly-keys
 ;; http://ergoemacs.org/misc/ergoemacs_vi_mode.html
 ;; http://ergoemacs.org/misc/xah-fly-keys_customization.html
-(add-to-list 'load-path "~/.emacs.d/xah-fly-keys/")
-(require 'xah-fly-keys)
-(setq xah-fly-use-control-key nil)
-(xah-fly-keys-set-layout "qwertz")
-(xah-fly-keys 1)
-;; custom bindungs
-(define-key xah-fly--tab-key-map (kbd "j") 'tabbar-backward-tab) ;; [lead TAB j]
-(define-key xah-fly--tab-key-map (kbd "l") 'tabbar-forward-tab)  ;; [lead TAB l]
+(use-package xah-fly-keys
+  :load-path "~/.emacs.d/xah-fly-keys/"
+  :init (setq xah-fly-use-control-key nil)
+  :config
+  (xah-fly-keys-set-layout "qwertz")
+  (xah-fly-keys 1)
+  ;; custom bindungs
+  (define-key xah-fly--tab-key-map (kbd "j") 'tabbar-backward-tab) ;;[lead TAB j]
+  (define-key xah-fly--tab-key-map (kbd "l") 'tabbar-forward-tab)  ;;[lead TAB l]
+)
 
 ;; Activates a window to show available shortcuts
 ;;https://github.com/justbur/emacs-which-key
@@ -176,4 +178,3 @@
 (global-set-key (kbd "C-l") 'forward-char)
 (global-set-key (kbd "C-u") 'backward-word)
 (global-set-key (kbd "C-o") 'forward-word)
-   
