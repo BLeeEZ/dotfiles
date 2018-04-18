@@ -35,3 +35,12 @@ apt-cyg install \
         curl \
         `# default for many other things` \
         tmux
+
+# zsh
+ask_install "Do you want to use the zsh-shell?"
+if [[ $? -eq 1 ]]; then
+  apt-cyg install zsh
+  echo "right click on the Sygwin icon in windows and add '/bin/zsh --login'"
+  echo ""
+  echo "e.g.: C:\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico /bin/zsh --login -"
+fi
