@@ -1,8 +1,6 @@
 #! /bin/bash
 
-params="-sf"
-
-for i in profile bash emacs 
+for i in profile bash emacs zsh 
 do
  stow $i 
 done
