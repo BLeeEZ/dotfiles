@@ -61,6 +61,7 @@ ENABLE_CORRECTION="true"
 plugins=(
   git
   vi-mode
+  sudo
 )
 
 source $ZSH/oh-my-zsh.sh
