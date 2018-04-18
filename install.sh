@@ -1,8 +1,11 @@
 #! /bin/bash
 
-ln -s ./dotfiles/.profile ../.profile
-ln -s ./dotfiles/.bash_logout ../.bash_logout
-ln -s ./dotfiles/.bashrc ../.bashrc
+params="-sf"
+
+for i in .profile .bash_logout .bashrc;
+do
+  ln $params ./dotfiles/$i ../$i
+done
 
 if [ ! -L ../.emacs.d ]
 then
