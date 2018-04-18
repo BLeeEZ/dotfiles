@@ -30,6 +30,7 @@ if [[ $? -eq 1 ]]; then
 fi
 
 apt-cyg install \
+        vim \
         `# get files from web` \
         wget \
         curl \
