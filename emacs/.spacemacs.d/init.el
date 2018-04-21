@@ -48,12 +48,13 @@ values."
      git
      ;; markdown
      ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom
+            shell-default-term-shell "/bin/zsh")
+     spell-checking
+     syntax-checking
+     version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -133,6 +134,10 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(solarized-dark
+                         solarized-light
+                         leuven
+                         monokai
+                         zenburn
                          dracula
                          spacemacs-dark
                          spacemacs-light)
@@ -320,6 +325,7 @@ you should place your code here."
 
   (define-key evil-visual-state-map (kbd "M-SPC") 'evil-normal-state)
   (define-key evil-insert-state-map (kbd "M-SPC") 'evil-normal-state)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
