@@ -91,7 +91,7 @@ aptitude -v clean
 
 # Symlinking dotfiles via GNU stow
 echo "Symlinking dotfiles via GNU stow"
-for i in profile bash emacs zsh 
+for i in bash emacs zsh 
 do
  stow $i 
 done
