@@ -64,6 +64,8 @@ aptitude install \
   `# GNU bash` \
   bash \
   bash-completion \
+  zsh \
+  rxvt-unicode \
   `# get files from web` \
   wget \
   curl \
@@ -91,7 +93,7 @@ aptitude -v clean
 
 # Symlinking dotfiles via GNU stow
 echo "Symlinking dotfiles via GNU stow"
-for i in bash emacs zsh 
+for i in bash emacs zsh urxvt
 do
  stow $i 
 done
