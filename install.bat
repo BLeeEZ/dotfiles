@@ -8,3 +8,4 @@ mklink /J "C:\cygwin\home\%username%\.zsh" "C:\Users\%username%\dotfiles\zsh\.zs
 mklink "C:\cygwin\home\%username%\.zshrc" "C:\Users\%username%\dotfiles\zsh\.zshrc"
 
 mklink "../.tmux.conf" "dotfiles/tmux/.tmux.conf"
+mklink "../.minttyrc" "dotfiles/mintty/.minttyrc"
