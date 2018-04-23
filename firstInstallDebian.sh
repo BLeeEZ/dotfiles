@@ -91,6 +91,14 @@ fi
 # clean downloaded and already installed packages
 aptitude -v clean
 
+# Install powerline fonts?
+read -p "Install patched powerline fonts? (y/n) " -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+    # fc-list will list all installed fonts
+    source fonts/powerline-fonts/install.sh
+fi
+
 # Symlinking dotfiles via GNU stow
 echo "Symlinking dotfiles via GNU stow"
 for i in bash emacs zsh urxvt
