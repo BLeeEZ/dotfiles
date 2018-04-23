@@ -62,6 +62,7 @@ plugins=(
   git
   vi-mode
   sudo
+  tmux
 )
 
 source $ZSH/oh-my-zsh.sh
