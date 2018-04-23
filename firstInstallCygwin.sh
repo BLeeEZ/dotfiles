@@ -45,3 +45,13 @@ if [[ $? -eq 1 ]]; then
   echo ""
   echo "e.g.: C:\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico /bin/zsh --login -"
 fi
+
+# Symlinking dotfiles via GNU stow?
+read -p "Symlinking dotfiles via GNU stow? (y/n) " -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+    for i in mintty zsh tmux
+    do
+        stow $i 
+    done
+fi
