@@ -99,9 +99,13 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     source fonts/powerline-fonts/install.sh
 fi
 
-# Symlinking dotfiles via GNU stow
-echo "Symlinking dotfiles via GNU stow"
-for i in bash emacs zsh urxvt
-do
- stow $i 
-done
+
+# Symlinking dotfiles via GNU stow?
+read -p "Symlinking dotfiles via GNU stow? (y/n) " -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+    for i in bash emacs zsh urxvt tmux
+    do
+        stow $i 
+    done
+fi
