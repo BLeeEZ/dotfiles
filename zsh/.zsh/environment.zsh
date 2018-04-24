@@ -14,5 +14,12 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LESSCHARSET=utf-8
 
+# The time the shell waits, in hundredths of seconds, for another key
+# to be pressed when reading bound multi-character sequences.
+#
+# This allows escape sequences like cursor/arrow keys to work,
+# while eliminating the delay exiting vi insert mode.
+KEYTIMEOUT=50
+
 # changing dircolors
 eval `dircolors ~/.zsh/dircolors`
