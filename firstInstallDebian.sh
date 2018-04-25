@@ -36,49 +36,54 @@ if [[ $? -eq 1 ]]; then
   aptitude upgrade
 fi
 
-aptitude install \
-  `# default for many other things` \
-  tmux \
-  build-essential \
-  autoconf \
-  make \
-  cmake \
-  mktemp \
-  dialog \
-  `# unzip, unrar etc.` \
-  zip \
-  unzip \
-  tar \
-  `# quickly find files on the filesystem based on their name` \
-  mlocate \
-  locales \
-  `# interactive processes viewer` \
-  htop \
-  `# interactive I/O viewer` \
-  iotop \
-  tree \
-  `# disk usage viewer` \
-  rsync \
-  whois \
-  vim \
-  `# GNU bash` \
-  bash \
-  bash-completion \
-  zsh \
-  rxvt-unicode \
-  `# get files from web` \
-  wget \
-  curl \
-  `# repo-tools`\
-  git \
-  `# usefull tools` \
-  stow \
-  nodejs \
-  npm \
-  lynx \
-  python \
-  python-pip \
-  python-dev
+# Installing packages via aptitude?
+read -p "Installing packages via aptitude? (y/n) " -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+  aptitude install \
+    `# default for many other things` \
+    tmux \
+    build-essential \
+    autoconf \
+    make \
+    cmake \
+    mktemp \
+    dialog \
+    `# unzip, unrar etc.` \
+    zip \
+    unzip \
+    tar \
+    `# quickly find files on the filesystem based on their name` \
+    mlocate \
+    locales \
+    `# interactive processes viewer` \
+    htop \
+    `# interactive I/O viewer` \
+    iotop \
+    tree \
+    `# disk usage viewer` \
+    rsync \
+    whois \
+    vim \
+    `# GNU bash` \
+    bash \
+    bash-completion \
+    zsh \
+    rxvt-unicode \
+    `# get files from web` \
+    wget \
+    curl \
+    `# repo-tools`\
+    git \
+    `# usefull tools` \
+    stow \
+    nodejs \
+    npm \
+    lynx \
+    python \
+    python-pip \
+    python-dev
+fi
 
 # try zsh?
 read -p "Do you want to use the zsh-shell? (y/n) " -n 1 yesOrNo
@@ -86,10 +91,15 @@ echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
   sudo aptitude install zsh
   chsh -s $(which zsh)
+  stow zsh
 fi
 
 # clean downloaded and already installed packages
-aptitude -v clean
+read -p "Clean downloaded and already installed packages in aptitude? (y/n) " -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+  aptitude -v clean
+fi
 
 # Install powerline fonts?
 read -p "Install patched powerline fonts? (y/n) " -n 1 yesOrNo
@@ -99,12 +109,11 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     source fonts/powerline-fonts/install.sh
 fi
 
-
 # Symlinking dotfiles via GNU stow?
 read -p "Symlinking dotfiles via GNU stow? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-    for i in bash emacs zsh urxvt tmux qutebrowser
+    for i in bash emacs urxvt tmux qutebrowser
     do
         stow $i 
     done
