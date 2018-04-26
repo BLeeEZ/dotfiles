@@ -37,11 +37,9 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
   pacman -S \
     `# default for many other things` \
     tmux \
-    build-essential \
     autoconf \
     make \
     cmake \
-    mktemp \
     dialog \
     `# unzip, unrar etc.` \
     zip \
@@ -49,7 +47,6 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     tar \
     `# quickly find files on the filesystem based on their name` \
     mlocate \
-    locales \
     `# interactive processes viewer` \
     htop \
     `# interactive I/O viewer` \
@@ -59,6 +56,7 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     rsync \
     whois \
     vim \
+    emacs \
     `# GNU bash` \
     bash \
     bash-completion \
@@ -75,8 +73,7 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     npm \
     lynx \
     python \
-    python-pip \
-    python-dev
+    python-pip
 fi
 
 # try zsh?
