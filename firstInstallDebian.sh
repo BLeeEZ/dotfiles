@@ -65,6 +65,7 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     rsync \
     whois \
     vim \
+    emacs \
     `# GNU bash` \
     bash \
     bash-completion \
