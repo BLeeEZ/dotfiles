@@ -1,11 +1,11 @@
 # alias
-alias em="emacsclient -c -t"
+alias em="emacsclient -c"
 
 # alternate editor is required to start a new emacs daemon when calling emacsclient
 export ALTERNATE_EDITOR=""
 # preferred editor for local and remote sessions
-export EDITOR="emacsclient -c -t"
-export VISUAL="emacsclient -c -t"
+export EDITOR="emacsclient -c"
+export VISUAL="emacsclient -c"
 # language
 export LC_COLLATE=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
