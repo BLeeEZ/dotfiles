@@ -62,7 +62,6 @@ plugins=(
   emacs
   git
   vi-mode
-  sudo
   tmux
   thefuck
 )
