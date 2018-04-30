@@ -73,7 +73,9 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     npm \
     lynx \
     python \
-    python-pip
+    python-pip \
+    python-setuptools \
+    python-wheel
 fi
 
 # Install packages via pip?

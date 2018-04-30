@@ -83,7 +83,9 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     lynx \
     python \
     python-pip \
-    python-dev
+    python-dev \
+    python-setuptools \
+    python-wheel
 fi
 
 # Install packages via pip?
