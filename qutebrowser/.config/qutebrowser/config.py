@@ -762,7 +762,12 @@ c.colors.tabs.selected.odd.fg = solarized['base2']
 ## `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
-c.editor.command = ['mintty.exe', 'vim', '-f', '{file}']
+import platform
+curPlatform = platform.system()
+if curPlatform == 'Linux':
+    c.editor.command = ['emacsclient', '-c', '{file}']
+elif curPlatform == 'Windows':
+    c.editor.command = ['mintty.exe', 'vim', '-f', '{file}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
