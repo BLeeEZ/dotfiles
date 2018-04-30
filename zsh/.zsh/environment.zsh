@@ -1,12 +1,6 @@
 # alias
-alias em="emacsclient -c"
 alias xreload="xrdb ~/.Xresources"
 
-# alternate editor is required to start a new emacs daemon when calling emacsclient
-export ALTERNATE_EDITOR=""
-# preferred editor for local and remote sessions
-export EDITOR="emacsclient -c"
-export VISUAL="emacsclient -c"
 # language
 export LC_COLLATE=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
