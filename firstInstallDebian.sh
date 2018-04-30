@@ -86,6 +86,15 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     python-dev
 fi
 
+# Install packages via pip?
+read -p "Installing packages via pip? (y/n) " -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+  pip3 install \
+    `# bash correction` \
+    thefuck
+fi
+
 # try zsh?
 read -p "Do you want to use the zsh-shell? (y/n) " -n 1 yesOrNo
 echo

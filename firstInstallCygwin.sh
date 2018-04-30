@@ -37,6 +37,15 @@ apt-cyg install \
         `# default for many other things` \
         tmux
 
+# Install packages via pip?
+read -p "Installing packages via pip? (y/n) " -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+  pip3 install \
+    `# bash correction` \
+    thefuck
+fi
+
 # zsh
 ask_install "Do you want to use the zsh-shell?"
 if [[ $? -eq 1 ]]; then

@@ -64,6 +64,7 @@ plugins=(
   vi-mode
   sudo
   tmux
+  thefuck
 )
 
 source $ZSH/oh-my-zsh.sh

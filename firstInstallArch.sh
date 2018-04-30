@@ -25,7 +25,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # update && upgrade
-ask_install "upgrade your system?"
+ask_install "Upgrade your system?"
 if [[ $? -eq 1 ]]; then
   pacman -Syu
 fi
@@ -74,6 +74,15 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     lynx \
     python \
     python-pip
+fi
+
+# Install packages via pip?
+read -p "Installing packages via pip? (y/n) " -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+  pip3 install \
+    `# bash correction` \
+    thefuck
 fi
 
 # try zsh?
