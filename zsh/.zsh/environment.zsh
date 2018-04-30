@@ -1,5 +1,6 @@
 # alias
 alias em="emacsclient -c"
+alias xreload="xrdb ~/.Xresources"
 
 # alternate editor is required to start a new emacs daemon when calling emacsclient
 export ALTERNATE_EDITOR=""
