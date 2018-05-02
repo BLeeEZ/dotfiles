@@ -5,6 +5,7 @@ Locale=C
 Charset=UTF-8
 Term=xterm-256color
 CursorType=block
+Transparency=low
 
 # --- COLOR ---
 # Source: https://github.com/mavnn/mintty-colors-solarized/blob/master/.minttyrc.dark

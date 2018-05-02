@@ -52,8 +52,8 @@ values."
             shell-default-height 30
             shell-default-position 'bottom
             shell-default-term-shell "/bin/zsh")
-     spell-checking
-     syntax-checking
+     ;; spell-checking
+     ;; syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
