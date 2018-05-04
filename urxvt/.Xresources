@@ -104,7 +104,7 @@ URxvt.pointerBlank:         true
 ! URxvt*background:            S_base03
 
 *background:              S_base03
-URxvt*background:              rgba:0000/2b00/3600/e800
+URxvt*background:         [80]S_base03
 *foreground:              S_base0
 *fading:                  40
 *fadeColor:               S_base03
