@@ -77,6 +77,15 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     python-wheel
 fi
 
+# Installing i3-gaps?
+read -p "Installing i3-gaps? (y/n) " -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+  pacman -S \
+    i3-gaps \
+    feh
+fi
+
 # try zsh?
 read -p "Do you want to use the zsh-shell? (y/n) " -n 1 yesOrNo
 echo
