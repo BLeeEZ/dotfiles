@@ -84,7 +84,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
   pacman -S \
     i3-gaps \
     feh \
-    compton
+    compton \
+    rofi
   stow i3
 fi
 
