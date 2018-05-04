@@ -83,7 +83,9 @@ echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
   pacman -S \
     i3-gaps \
-    feh
+    feh \
+    compton
+  stow i3
 fi
 
 # try zsh?

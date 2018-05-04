@@ -36,7 +36,10 @@ floating_modifier $mod
 
 #---- Starting external scripts ----#
 #-----------------------------------#
+#Setting the background:
 exec_always --no-startup-id feh --bg-scale ~/.config/wall.jpg
+#Composite manager:
+exec --no-startup-id compton --xrender-sync-fence
 
 #---- Basic bindings ----#
 #------------------------#
@@ -79,7 +82,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split toggle
-bindsym $mod+v split toggle
+bindsym $mod+t split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -176,4 +179,5 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position top
 }
