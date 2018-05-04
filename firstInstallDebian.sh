@@ -30,7 +30,7 @@ if [ \! -f $(whereis aptitude | cut -f 2 -d ' ') ] ; then
 fi
 
 # update && upgrade
-ask_install "upgrade your system?"
+ask_install "Upgrade your system?"
 if [[ $? -eq 1 ]]; then
   aptitude update
   aptitude upgrade
@@ -88,6 +88,17 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     python-wheel
 fi
 
+# Installing i3-gaps?
+read -p "Installing i3-gaps? (y/n) " -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+  aptitude install \
+    feh \
+    compton \
+    rofi
+  stow i3
+fi
+
 # Install packages via pip?
 read -p "Installing packages via pip? (y/n) " -n 1 yesOrNo
 echo
@@ -101,7 +112,7 @@ fi
 read -p "Do you want to use the zsh-shell? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-  sudo aptitude install zsh
+  aptitude install zsh
   chsh -s $(which zsh)
   stow zsh
 fi
