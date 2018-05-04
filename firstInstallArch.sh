@@ -71,20 +71,10 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     stow \
     nodejs \
     npm \
-    lynx \
     python \
     python-pip \
     python-setuptools \
     python-wheel
-fi
-
-# Install packages via pip?
-read -p "Installing packages via pip? (y/n) " -n 1 yesOrNo
-echo
-if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-  pip3 install \
-    `# bash correction` \
-    thefuck
 fi
 
 # try zsh?

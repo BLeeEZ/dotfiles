@@ -63,7 +63,6 @@ plugins=(
   git
   vi-mode
   tmux
-  thefuck
 )
 
 source $ZSH/oh-my-zsh.sh
