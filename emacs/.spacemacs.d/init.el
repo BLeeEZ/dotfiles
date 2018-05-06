@@ -323,6 +323,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (spacemacs/enable-transparency)
   (global-company-mode)
   (define-key evil-visual-state-map (kbd "M-SPC") 'evil-normal-state)
   (define-key evil-insert-state-map (kbd "M-SPC") 'evil-normal-state)
