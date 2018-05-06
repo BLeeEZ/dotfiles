@@ -85,7 +85,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     i3-gaps \
     feh \
     compton \
-    rofi
+    rofi \
+    xbacklight
   stow i3
 fi
 

@@ -46,6 +46,7 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     build-essential \
     autoconf \
     make \
+
     cmake \
     mktemp \
     dialog \
@@ -95,7 +96,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
   aptitude install \
     feh \
     compton \
-    rofi
+    rofi \
+    xbacklight
   stow i3
 fi
 
