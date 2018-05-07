@@ -3,7 +3,7 @@ alias xreload="xrdb ~/.Xresources"
 
 # path adjustments
 export PATH=$PATH:$HOME/bin
-export EDITOR="emacsclient --alternate-editor ''"
+export EDITOR="emacsclient --alternate-editor '' -c"
 export TERMINAL="urxvt"
 export BROWSER="firefox"
 
