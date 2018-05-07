@@ -24,6 +24,9 @@ if [ "$(id -u)" != "0" ]; then
   exit 1
 fi
 
+# Setting the Home path to the user who calls this script with sudo
+HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+
 # update && upgrade
 ask_install "Upgrade your system?"
 if [[ $? -eq 1 ]]; then

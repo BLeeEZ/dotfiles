@@ -24,6 +24,9 @@ if [ "$(id -u)" != "0" ]; then
   exit 1
 fi
 
+# Setting the Home path to the user who calls this script with sudo
+HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+
 # use aptitude in the next steps ...
 if [ \! -f $(whereis aptitude | cut -f 2 -d ' ') ] ; then
   apt-get install aptitude
