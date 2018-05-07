@@ -85,6 +85,9 @@ echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
   pacman -S \
     i3-gaps \
+    `# dependencies for polybar` \
+    python-iwlib \
+    polybar \
     feh \
     compton \
     rofi \
