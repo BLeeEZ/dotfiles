@@ -86,7 +86,10 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     feh \
     compton \
     rofi \
-    xbacklight
+    `# display brightness control` \
+    xbacklight \
+    `# keyboard key remapping` \
+    xcape
   stow i3
 fi
 

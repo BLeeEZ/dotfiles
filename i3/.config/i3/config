@@ -39,12 +39,14 @@ floating_modifier $mod
 
 #---- Starting external scripts ----#
 #-----------------------------------#
-#Setting the background:
+# Setting the background:
 exec_always --no-startup-id feh --bg-scale ~/.config/wall.jpg
-#Composite manager:
+# Composite manager:
 exec --no-startup-id compton
 # Launch polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+# Runs the key remapping scripts
+exec --no-startup-id ~/bin/xkeyremap
 
 #---- Basic bindings ----#
 #------------------------#
