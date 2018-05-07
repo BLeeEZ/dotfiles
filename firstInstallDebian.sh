@@ -86,7 +86,9 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     python-pip \
     python-dev \
     python-setuptools \
-    python-wheel
+    python-wheel \
+    `# keyboard key remapping` \
+    xcape
 fi
 
 # Installing i3-gaps?
@@ -98,9 +100,7 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     compton \
     rofi \
     `# display brightness control` \
-    xbacklight \
-    `# keyboard key remapping` \
-    xcape
+    xbacklight
   stow i3
 fi
 
@@ -141,8 +141,8 @@ fi
 read -p "Symlinking dotfiles via GNU stow? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-    for i in bash emacs urxvt tmux qutebrowser
+    for i in bash emacs urxvt tmux qutebrowser bin
     do
-        stow $i 
+        stow $i
     done
 fi

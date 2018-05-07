@@ -1,6 +1,9 @@
 # alias
 alias xreload="xrdb ~/.Xresources"
 
+# path adjustments
+export PATH=$PATH:$HOME/bin
+
 # language
 export LC_COLLATE=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
