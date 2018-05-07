@@ -31,8 +31,8 @@ urxvt.saveLines:            9999
 
 ! Fonts
 URxvt.allow_bold:           false
-URxvt*font: xft:Hack:pixelsize=12:antialias=true
-URxvt*boldFont: xft:Hack:pixelsize=12:antialias=true
+URxvt*font: xft:monospace:pixelsize=12:antialias=true
+URxvt*boldFont: xft:monospace:pixelsize=12:antialias=true
 
 ! Fix font space
 URxvt*letterSpace: -1
