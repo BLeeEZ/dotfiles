@@ -9,6 +9,8 @@ Xft.antialias:              true
 Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
+Xft.autohint:               false
+Xft.lcdfilter:              lcddefault
 
 !-------------------------------------------------------------------------------
 ! URxvt settings
@@ -24,15 +26,12 @@ URxvt.fading:               0
 ! URxvt.urgentOnBell:         true
 ! URxvt.visualBell:           true
 URxvt.loginShell:           true
-URxvt.saveLines:            50
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 urxvt.saveLines:            9999
 
 ! Fonts
-URxvt.allow_bold:           false
-URxvt*font: xft:monospace:pixelsize=12:antialias=true
-URxvt*boldFont: xft:monospace:pixelsize=12:antialias=true
+URxvt*font: xft:monospace:pixelsize=12
 
 ! Fix font space
 URxvt*letterSpace: -1
