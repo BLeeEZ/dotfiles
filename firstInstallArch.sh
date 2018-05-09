@@ -66,7 +66,6 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     bash \
     bash-completion \
     zsh \
-    rxvt-unicode \
     `# get files from web` \
     wget \
     curl \
@@ -83,7 +82,7 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     `# keyboard key remapping` \
     xcape
 
-  yaourt -S \
+  sudo -u $SUDO_USER yaourt -S \
     `# using fixed version of rxvt-unicode for fonts` \
     rxvt-unicode-wcwidthcallback
 fi
