@@ -144,7 +144,7 @@ fi
 read -p "Symlinking dotfiles via GNU stow? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-    for i in bash emacs urxvt tmux qutebrowser bin
+    for i in bash emacs urxvt tmux qutebrowser bin fonts
     do
         stow $i
     done

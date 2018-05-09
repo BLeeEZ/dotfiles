@@ -55,6 +55,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     `# interactive I/O viewer` \
     iotop \
     tree \
+    `# fonts for icons` \
+    awesome-terminal-fonts \
     `# disk usage viewer` \
     rsync \
     whois \
@@ -80,6 +82,10 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     python-wheel \
     `# keyboard key remapping` \
     xcape
+
+  yaourt -S \
+    `# using fixed version of rxvt-unicode for fonts` \
+    rxvt-unicode-wcwidthcallback
 fi
 
 # Installing i3-gaps?
@@ -120,7 +126,7 @@ fi
 read -p "Symlinking dotfiles via GNU stow? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-    for i in bash emacs urxvt tmux qutebrowser bin
+    for i in bash emacs urxvt tmux qutebrowser bin fonts
     do
         stow $i
     done
