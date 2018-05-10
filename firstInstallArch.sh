@@ -93,12 +93,17 @@ echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
   pacman -S \
     i3-gaps \
+    i3lock \
     `# dependencies for polybar` \
     python-iwlib \
     polybar \
     feh \
     compton \
     rofi \
+    `# command line display screenshot` \
+    scrot \
+    `# command line image manipulation` \
+    imagemagick \
     `# display brightness control` \
     xorg-xbacklight
   stow i3
