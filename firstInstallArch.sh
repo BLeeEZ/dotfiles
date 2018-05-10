@@ -100,6 +100,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     feh \
     compton \
     rofi \
+    `# calls prog after some time of user inactivity` \
+    xautolock \
     `# command line display screenshot` \
     scrot \
     `# command line image manipulation` \
