@@ -100,6 +100,9 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     feh \
     compton \
     rofi \
+    `# notification-daemon` \
+    libnotify \
+    dunst \
     `# calls prog after some time of user inactivity` \
     xautolock \
     `# command line display screenshot` \
