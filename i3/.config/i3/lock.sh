@@ -5,7 +5,8 @@
 scrot /tmp/screen.png
 
 # Create a blur on the shot:
-convert /tmp/screen.png -paint 1 -swirl 360 /tmp/screen.png
+convert /tmp/screen.png -resize 10% /tmp/screen.png
+convert /tmp/screen.png -resize 1000% /tmp/screen.png
 
 # Add the lock to the blurred image:
 [[ -f ~/.config/i3/lock.png ]] && convert /tmp/screen.png  ~/.config/i3/lock.png -gravity center -composite -matte /tmp/screen.png
