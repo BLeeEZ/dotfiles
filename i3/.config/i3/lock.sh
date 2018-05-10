@@ -1,4 +1,5 @@
 #!/bin/bash
+# Source: https://github.com/LukeSmithxyz/voidrice/blob/master/.config/i3/lock.sh
 
 # Take a screenshot:
 scrot /tmp/screen.png
