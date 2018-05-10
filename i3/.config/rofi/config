@@ -10,12 +10,12 @@ rofi.width: 30
 ! Key bindings
 rofi.kb-accept-entry        : Control+m,Return,KP_Enter
 rofi.kb-cancel              : Escape,Control+c
-rofi.kb-mode-next           :
-rofi.kb-mode-previous       :
+rofi.kb-mode-next           : Control+Shift+l
+rofi.kb-mode-previous       : Control+Shift+h
 rofi.kb-row-up              : Up,Control+k,Shift+Tab
 rofi.kb-row-down            : Down,Control+j,Tab
-rofi.kb-remove-to-eol       :
-rofi.kb-remove-to-sol       :
+rofi.kb-remove-to-eol       : Control+Shift+e
+rofi.kb-remove-to-sol       : Control+Shift+a
 rofi.kb-remove-char-back    : Control+Shift+x,BackSpace
 rofi.kb-remove-char-forward : Control+x,Delete
 
