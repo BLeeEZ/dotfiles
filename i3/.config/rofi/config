@@ -1,8 +1,28 @@
 rofi.theme: solarized
-rofi.font: hack 12 
+rofi.font: hack 12
 
 rofi.fake-transparency: true
 rofi.lines:             5
 rofi.bw:                0
 rofi.hide-scrollbar:    true
 rofi.width: 30
+
+! Key bindings
+rofi.kb-accept-entry        : Control+m,Return,KP_Enter
+rofi.kb-cancel              : Escape,Control+c
+rofi.kb-mode-next           :
+rofi.kb-mode-previous       :
+rofi.kb-row-up              : Up,Control+k,Shift+Tab
+rofi.kb-row-down            : Down,Control+j,Tab
+rofi.kb-remove-to-eol       :
+rofi.kb-remove-to-sol       :
+rofi.kb-remove-char-back    : Control+Shift+x,BackSpace
+rofi.kb-remove-char-forward : Control+x,Delete
+
+rofi.kb-clear-line          : Control+u
+rofi.kb-move-front          : Control+a
+rofi.kb-move-end            : Control+e
+rofi.kb-move-word-back      : Control+b
+rofi.kb-move-word-forward   : Control+w
+rofi.kb-move-char-back      : Control+h
+rofi.kb-move-char-forward   : Control+l
