@@ -43,6 +43,8 @@ floating_modifier $mod
 exec_always --no-startup-id feh --bg-scale ~/.config/wall.jpg
 # Lock screen after some time of user inactivity
 exec --no-startup-id xautolock -time 5 -locker ~/.config/i3/lock.sh
+# Starts dunst for notifications:
+exec --no-startup-id dunst
 # Composite manager:
 exec --no-startup-id compton
 # Launch polybar
