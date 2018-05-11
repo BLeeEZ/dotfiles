@@ -42,7 +42,7 @@ floating_modifier $mod
 # Setting the background:
 exec_always --no-startup-id feh --bg-scale ~/.config/wall.jpg
 # Lock screen after some time of user inactivity
-exec --no-startup-id xautolock -time 5 -locker ~/.config/i3/lock.sh
+exec --no-startup-id xautolock -time 5 -locker ~/bin/locker
 # Starts dunst for notifications:
 exec --no-startup-id dunst
 # Composite manager:
@@ -113,7 +113,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # lock screen
-bindsym $mod+x exec --no-startup-id ~/.config/i3/lock.sh
+bindsym $mod+x exec --no-startup-id ~/bin/locker
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -165,6 +165,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym XF86MonBrightnessDown     exec --no-startup-id xbacklight -dec 15
 bindsym XF86MonBrightnessUp       exec --no-startup-id xbacklight -inc 15
+bindsym XF86Sleep                 exec --no-startup-id ~/bin/locker
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
