@@ -1,5 +1,8 @@
 #!/bin/bash
 
+SCREEN_OFF_DEFAULT_WAIT_TIME_IN_SEC=20
+SUSPEND_DEFAULT_WAIT_TIME_IN_SEC=20
+
 function lock_screen() {
     # Take a screenshot:
     scrot /tmp/screen.png
@@ -15,27 +18,31 @@ function lock_screen() {
     i3lock -e -f -c 000000 -i /tmp/screen.png
 }
 
+function lock_power_save() {
+    # If still locked after xxx seconds, turn off screen. After additional xxx seconds suspend system
+    screen_off_wait_time=$1
+    suspend_wait_time=$2
+
+    lock_screen
+    sleep $screen_off_wait_time && \
+        pgrep i3lock && \
+        xset dpms force off && \
+        sleep $suspend_wait_time && \
+        pgrep i3lock && \
+        systemctl suspend
+}
 
 case "$1" in
     lock)
-        # If still locked after 20 seconds, turn off screen. After additional 20 seconds suspend system
-        lock_screen
-        sleep 20 && pgrep i3lock && \
-            xset dpms force off && \
-            sleep 20 && pgrep i3lock && \
-            systemctl suspend
+        lock_power_save $SCREEN_OFF_DEFAULT_WAIT_TIME_IN_SEC $SUSPEND_DEFAULT_WAIT_TIME_IN_SEC
         ;;
     suspend)
-        lock_screen
-        sleep 1 && xset dpms force off && sleep 1 && systemctl suspend
+        lock_power_save 1 1
+        ;;
+    test)
+        lock_power_save $SCREEN_OFF_DEFAULT_WAIT_TIME_IN_SEC $SUSPEND_DEFAULT_WAIT_TIME_IN_SEC
         ;;
     *)
-        # If still locked after 20 seconds, turn off screen. After additional 20 seconds suspend system
-        echo "default -> lock"
-        lock_screen
-        sleep 20 && pgrep i3lock && \
-            xset dpms force off && \
-            sleep 20 && pgrep i3lock && \
-            systemctl suspend
+        lock_power_save $SCREEN_OFF_DEFAULT_WAIT_TIME_IN_SEC $SUSPEND_DEFAULT_WAIT_TIME_IN_SEC
         ;;
 esac
