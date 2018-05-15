@@ -66,6 +66,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     bash \
     bash-completion \
     zsh \
+    `# command line file manager` \
+    ranger \
     `# get files from web` \
     wget \
     curl \
@@ -135,7 +137,7 @@ fi
 read -p "Symlinking dotfiles via GNU stow? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-    for i in bash emacs urxvt tmux qutebrowser bin fonts
+    for i in bash emacs urxvt tmux qutebrowser bin fonts ranger
     do
         stow $i
     done
