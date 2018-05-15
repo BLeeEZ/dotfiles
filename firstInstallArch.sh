@@ -81,6 +81,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     python-pip \
     python-setuptools \
     python-wheel \
+    `# Generate and change colorschemes on the fly` \
+    python-pywal \
     `# keyboard key remapping` \
     xcape
 

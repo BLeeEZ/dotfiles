@@ -1,5 +1,5 @@
-rofi.theme: solarized
-rofi.font: hack 12
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
+rofi.font: monospace 12
 
 rofi.fake-transparency: true
 rofi.lines:             5
