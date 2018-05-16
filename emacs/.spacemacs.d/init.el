@@ -54,13 +54,13 @@ values."
             shell-default-term-shell "/bin/zsh")
      ;; spell-checking
      ;; syntax-checking
-     ;; version-control
+     version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(xresource-theme)
+   dotspacemacs-additional-packages '()
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -133,8 +133,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(xresources
-                         solarized-dark
+   dotspacemacs-themes '(solarized-dark
                          solarized-light
                          dracula
                          spacemacs-dark
@@ -320,8 +319,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-
-  (spacemacs/enable-transparency)
+  
   (global-company-mode)
   (define-key evil-visual-state-map (kbd "M-SPC") 'evil-normal-state)
   (define-key evil-insert-state-map (kbd "M-SPC") 'evil-normal-state)
