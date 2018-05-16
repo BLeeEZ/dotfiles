@@ -1,5 +1,4 @@
 #!/bin/sh
-# Waits some time then executes pywal to configure colorscheme
+# Executes pywal to configure colorscheme
 
-sleep 2
 wal -f base16-flat -a 70
