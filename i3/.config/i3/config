@@ -39,6 +39,8 @@ floating_modifier $mod
 
 #---- Starting external scripts ----#
 #-----------------------------------#
+# Set colorscheme by pywal
+exec_always --no-startup-id ~/bin/colorize
 # Setting the background:
 exec_always --no-startup-id feh --bg-scale ~/.config/wall.jpg
 # Lock screen after some time of user inactivity
@@ -51,6 +53,25 @@ exec --no-startup-id compton
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 # Runs the key remapping scripts
 exec --no-startup-id ~/bin/xkeyremap
+
+#---- Using pywal colorscheme ----#
+#---------------------------------#
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
 
 #---- Basic bindings ----#
 #------------------------#
