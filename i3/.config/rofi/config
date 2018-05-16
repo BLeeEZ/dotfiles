@@ -13,7 +13,8 @@ rofi.kb-cancel              : Escape,Control+c
 rofi.kb-mode-next           : Control+Shift+l
 rofi.kb-mode-previous       : Control+Shift+h
 rofi.kb-row-up              : Up,Control+k,Shift+Tab
-rofi.kb-row-down            : Down,Control+j,Tab
+rofi.kb-row-down            : Down,Control+j
+rofi.kb-row-tab             : Tab
 rofi.kb-remove-to-eol       : Control+Shift+e
 rofi.kb-remove-to-sol       : Control+Shift+a
 rofi.kb-remove-char-back    : Control+Shift+x,BackSpace

@@ -81,14 +81,14 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     python-pip \
     python-setuptools \
     python-wheel \
-    `# Generate and change colorschemes on the fly` \
-    python-pywal \
     `# keyboard key remapping` \
     xcape
 
   sudo -u $SUDO_USER yaourt -S \
     `# using fixed version of rxvt-unicode for fonts` \
     rxvt-unicode-wcwidthcallback
+    `# Generate and change colorschemes on the fly` \
+    python-pywal
 fi
 
 # Installing i3-gaps?
