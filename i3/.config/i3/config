@@ -113,8 +113,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# open ranger
-bindsym $mod+r exec $term -e ranger
+# open file manager
+bindsym $mod+e exec $term -e ~/bin/filem
 
 # split toggle
 bindsym $mod+t split toggle
@@ -129,9 +129,8 @@ bindsym $mod+Shift+i resize grow height 10 px or 10 ppt
 bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+s layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
