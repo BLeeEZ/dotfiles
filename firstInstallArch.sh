@@ -44,6 +44,7 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     make \
     cmake \
     dialog \
+    yaourt \
     `# unzip, unrar etc.` \
     zip \
     unzip \
@@ -99,6 +100,7 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     i3-gaps \
     i3lock \
     `# dependencies for polybar` \
+    libmpdclient \
     python-iwlib \
     polybar \
     feh \
@@ -123,7 +125,7 @@ read -p "Do you want to use the zsh-shell? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
   pacman -S zsh
-  chsh -s $(which zsh)
+  sudo -u $SUDO_USER chsh -s $(which zsh)
   stow zsh
 fi
 
