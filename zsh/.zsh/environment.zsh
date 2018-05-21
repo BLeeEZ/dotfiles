@@ -1,5 +1,9 @@
 # alias
 alias xreload="xrdb ~/.Xresources"
+alias gdot="cd ~/dotfiles/"
+alias gdoc="cd ~/Documents/"
+alias gpic="cd ~/Pictures/"
+alias gdl="cd ~/Downloads/"
 
 # path adjustments
 export PATH=$PATH:$HOME/bin
