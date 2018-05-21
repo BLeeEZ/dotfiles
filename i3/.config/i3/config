@@ -17,7 +17,9 @@ gaps inner 15
 gaps outer 0
 # Removing title bar
 for_window [class="^.*"] border pixel 3
+
 set $term --no-startup-id st
+set $browser --no-startup-id qutebrowser
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -116,6 +118,8 @@ bindsym $mod+Shift+Right move right
 
 # open file manager
 bindsym $mod+e exec $term -e ~/bin/filem
+# open internet browser
+bindsym $mod+b exec $browser
 
 # split toggle
 bindsym $mod+t split toggle

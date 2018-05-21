@@ -67,6 +67,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     bash \
     bash-completion \
     zsh \
+    `# internet browser with vim keys support` \
+    qutebrowser \
     `# command line file manager` \
     ranger \
     `# get files from web` \
