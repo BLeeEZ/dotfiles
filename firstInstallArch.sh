@@ -33,8 +33,8 @@ if [[ $? -eq 1 ]]; then
   pacman -Syu
 fi
 
-# Installing packages via aptitude?
-read -p "Installing packages via pacman? (y/n) " -n 1 yesOrNo
+# Installing common packages?
+read -p "Installing common packages? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
   pacman -S \
@@ -92,6 +92,9 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     rxvt-unicode-wcwidthcallback
     `# Generate and change colorschemes on the fly` \
     python-pywal
+
+  # Installing  st terminal
+  sudo make clean install -C st
 fi
 
 # Installing i3-gaps?
