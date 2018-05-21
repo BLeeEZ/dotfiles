@@ -139,7 +139,7 @@ read -p "Install patched powerline fonts? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     # fc-list will list all installed fonts
-    source fonts/powerline-fonts/install.sh
+    source externals/powerline-fonts/install.sh
 fi
 
 # Symlinking dotfiles via GNU stow?
