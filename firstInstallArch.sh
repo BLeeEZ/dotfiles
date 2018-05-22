@@ -69,6 +69,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     zsh \
     `# internet browser with vim keys support` \
     qutebrowser \
+    `# drawing images in terminal` \
+    w3m \
     `# command line file manager` \
     ranger \
     `# get files from web` \
