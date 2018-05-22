@@ -1,0 +1,8 @@
+#!/bin/sh
+
+source_path=/$1
+mount_path=/mnt/$2
+mkdir -p ${mount_path}
+echo Mount host ${source_path} to guest ${mount_path}
+vmhgfs-fuse -o allow_other -o auto_unmount .host:${source_path} ${mount_path}
+
