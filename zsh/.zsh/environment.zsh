@@ -7,7 +7,7 @@ alias gdl="cd ~/Downloads/"
 
 # path adjustments
 export PATH=$PATH:$HOME/bin
-export EDITOR="emacsclient --alternate-editor '' -c"
+export EDITOR="emacsclient -nw --alternate-editor '' -c"
 export TERMINAL="st"
 export BROWSER="qutebrowser"
 
