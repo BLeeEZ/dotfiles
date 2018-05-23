@@ -55,6 +55,8 @@ exec --no-startup-id compton
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 # Runs the key remapping scripts
 exec --no-startup-id ~/bin/xkeyremap
+# Unclutter makes the mouse invisible after a brief period
+exec --no-startup-id unclutter
 
 #---- Using pywal colorscheme ----#
 #---------------------------------#

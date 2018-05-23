@@ -126,6 +126,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     libmpdclient \
     python-iwlib \
     polybar-git \
+    `# Hide the mouse cursor if it is not being used` \
+    unclutter-xfixes-git
 
   stow i3
 fi
