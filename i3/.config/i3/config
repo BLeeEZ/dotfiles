@@ -57,6 +57,8 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id ~/bin/xkeyremap
 # Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
+# Network Manager applet
+exec --no-startup-id nm-applet
 
 #---- Using pywal colorscheme ----#
 #---------------------------------#

@@ -118,6 +118,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     scrot \
     `# command line image manipulation` \
     imagemagick \
+    `# network manager gui for the system tray` \
+    network-manager-applet \
     `# display brightness control` \
     xorg-xbacklight
 
