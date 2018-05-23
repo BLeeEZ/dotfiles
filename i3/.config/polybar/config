@@ -188,7 +188,7 @@ type = internal/xbacklight
 format = <label> <bar>
 label = 
 
-bar-width = 10
+bar-width = 6
 bar-indicator = |
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
@@ -341,7 +341,7 @@ format-charging-underline = #ffb52a
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
