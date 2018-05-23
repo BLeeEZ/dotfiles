@@ -313,7 +313,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
   (custom-set-variables '(spacemacs-theme-custom-colors
-                          '((bg1 . nil)
+                          '(
+                            (bg1 . nil)
                             (bg2 . nil)
                             (bg3 . nil)
                             (bg4 . nil)
