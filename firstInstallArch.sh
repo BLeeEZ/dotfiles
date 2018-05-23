@@ -91,7 +91,7 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
 
   sudo -u $SUDO_USER yaourt -S \
     `# using fixed version of rxvt-unicode for fonts` \
-    rxvt-unicode-wcwidthcallback
+    rxvt-unicode-wcwidthcallback \
     `# Generate and change colorschemes on the fly` \
     python-pywal
 
