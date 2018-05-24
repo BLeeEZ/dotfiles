@@ -71,6 +71,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     qutebrowser \
     `# drawing images in terminal` \
     w3m \
+    `# ranger previews highlighted` \
+    highlight \
     `# command line file manager` \
     ranger \
     `# get files from web` \
