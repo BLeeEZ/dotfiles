@@ -17,7 +17,7 @@ function notify_successfull_mount() {
 
 pgrep -x rofi && exit
 
-remotemounts=$(echo "//localhost/user")
+remotemounts=$(smbtree | grep -P '\t\t\\\\' | awk '{print $1}' | grep -v IPC)
 remotetarget=$(echo "$remotemounts" | rofi -dmenu -i -p "Connect to which server?")
 [[ "$remotetarget" = "" ]] && exit 1
 
