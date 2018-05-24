@@ -1,3 +1,34 @@
 #!/bin/sh
 
-sudo mount -t cifs -o user=$1 $2 $3
+function get_mountpoint() {
+    dirs=$(find /mnt /media /mount /home -type d -maxdepth 3 2>/dev/null)
+    mountpoint=$(echo "$dirs" | rofi -dmenu -i -p "Type in mount point.")
+    [[ "$mountpoint" = "" ]] && exit 1
+    if [[ ! -d "$mountpoint" ]]; then
+	      mkdiryn=$(echo -e "No\nYes" | rofi -dmenu -i -p  "$mountpoint does not exist. Create it?")
+	      [[ "$mkdiryn" = Yes ]] && sudo mkdir -p "$mountpoint"
+    fi
+}
+
+function notify_successfull_mount() {
+    echo Successfully mounted $1 to $2
+    notify-send "Successfully mounted $1 to $2."
+}
+
+pgrep -x rofi && exit
+
+remotemounts=$(echo "//localhost/user")
+remotetarget=$(echo "$remotemounts" | rofi -dmenu -i -p "Connect to which server?" | awk '{print $1}')
+[[ "$remotetarget" = "" ]] && exit 1
+echo $remotetarget
+
+users=$(ls /home)
+[[ "$users" = "" ]] && exit 1
+chosenuser=$(echo "$users" | rofi -dmenu -i -p "As which user you want to connect?" | awk '{print $1}')
+[[ "$chosenuser" = "" ]] && exit 1
+echo $chosenuser
+
+get_mountpoint
+echo $mountpoint
+
+sudo mount -t cifs -o user=${chosenuser} ${remotetarget} ${mountpoint} && notify_successfull_mount $remotetarget $mountpoint
