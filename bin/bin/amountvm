@@ -19,7 +19,7 @@ pgrep -x rofi && exit
 
 sharedfolders=$(vmware-hgfsclient)
 [[ "$sharedfolders" = "" ]] && exit 1
-chosen=$(echo "$sharedfolders" | rofi -dmenu -i -p "Mount which shared folder?" | awk '{print $1}')
+chosen=$(echo "$sharedfolders" | rofi -dmenu -i -p "Mount which shared folder?")
 [[ "$chosen" = "" ]] && exit 1
 get_mountpoint
 sudo vmhgfs-fuse -o allow_other -o auto_unmount .host:${chosen} ${mountpoint} && notify_successfull_mount $chosen $mountpoint

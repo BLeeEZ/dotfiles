@@ -1,0 +1,26 @@
+#!/bin/sh
+
+pgrep -x rofi && exit
+
+amountscripts=$(echo -e \
+"device
+samba
+vm-shared-folder")
+
+chosenmount=$(echo "$amountscripts" | rofi -dmenu -i -p "What do you want to mount?")
+[[ "$chosenmount" = "" ]] && exit 1
+
+case "$chosenmount" in
+"device")
+  source amountdevice
+  ;;
+"samba")
+  source amountsmb
+  ;;
+"vm-shared-folder")
+  source amountvm
+  ;;
+*)
+  ;;
+esac
+

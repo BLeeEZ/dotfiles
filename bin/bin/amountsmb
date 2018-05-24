@@ -18,17 +18,14 @@ function notify_successfull_mount() {
 pgrep -x rofi && exit
 
 remotemounts=$(echo "//localhost/user")
-remotetarget=$(echo "$remotemounts" | rofi -dmenu -i -p "Connect to which server?" | awk '{print $1}')
+remotetarget=$(echo "$remotemounts" | rofi -dmenu -i -p "Connect to which server?")
 [[ "$remotetarget" = "" ]] && exit 1
-echo $remotetarget
 
 users=$(ls /home)
 [[ "$users" = "" ]] && exit 1
-chosenuser=$(echo "$users" | rofi -dmenu -i -p "As which user you want to connect?" | awk '{print $1}')
+chosenuser=$(echo "$users" | rofi -dmenu -i -p "As which user you want to connect?")
 [[ "$chosenuser" = "" ]] && exit 1
-echo $chosenuser
 
 get_mountpoint
-echo $mountpoint
 
 sudo mount -t cifs -o user=${chosenuser} ${remotetarget} ${mountpoint} && notify_successfull_mount $remotetarget $mountpoint
