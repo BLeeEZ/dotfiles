@@ -5,7 +5,7 @@ rofi.fake-transparency: true
 rofi.lines:             5
 rofi.bw:                0
 rofi.hide-scrollbar:    true
-rofi.width: 30
+rofi.width: 40
 
 ! Key bindings
 rofi.kb-accept-entry        : Control+m,Return,KP_Enter
