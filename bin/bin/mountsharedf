@@ -1,8 +1,25 @@
 #!/bin/sh
 
-source_path=/$1
-mount_path=/mnt/$2
-mkdir -p ${mount_path}
-echo Mount host ${source_path} to guest ${mount_path}
-vmhgfs-fuse -o allow_other -o auto_unmount .host:${source_path} ${mount_path}
+function get_mountpoint() {
+    dirs=$(find /mnt /media /mount /home -type d -maxdepth 3 2>/dev/null)
+    mountpoint=$(echo "$dirs" | rofi -dmenu -i -p "Type in mount point.")
+    [[ "$mountpoint" = "" ]] && exit 1
+    if [[ ! -d "$mountpoint" ]]; then
+	      mkdiryn=$(echo -e "No\nYes" | rofi -dmenu -i -p  "$mountpoint does not exist. Create it?")
+	      [[ "$mkdiryn" = Yes ]] && sudo mkdir -p "$mountpoint"
+    fi
+}
 
+function notify_successfull_mount() {
+    echo Successfully mounted $1 to $2
+    notify-send "Successfully mounted $1 to $2."
+}
+
+pgrep -x rofi && exit
+
+sharedfolders=$(vmware-hgfsclient)
+[[ "$sharedfolders" = "" ]] && exit 1
+chosen=$(echo "$sharedfolders" | rofi -dmenu -i -p "Mount which shared folder?" | awk '{print $1}')
+[[ "$chosen" = "" ]] && exit 1
+get_mountpoint
+sudo vmhgfs-fuse -o allow_other -o auto_unmount .host:${chosen} ${mountpoint} && notify_successfull_mount $chosen $mountpoint

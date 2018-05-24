@@ -17,7 +17,7 @@ sudo mount "$chosen" && exit 0
 # I.e. you can increase the depth of the search, or add directories.
 # This will increase the load time briefly though.
 dirs=$(find /mnt /media /mount /home -type d -maxdepth 5 2>/dev/null)
-mountpoint=$(echo "$dirs" | rofi -dmen u-i -p "Type in mount point.")
+mountpoint=$(echo "$dirs" | rofi -dmenu -i -p "Type in mount point.")
 [[ "$mountpoint" = "" ]] && exit 1
 if [[ ! -d "$mountpoint" ]]; then
 	  mkdiryn=$(echo -e "No\nYes" | rofi -dmenu -i -p  "$mountpoint does not exist. Create it?")
