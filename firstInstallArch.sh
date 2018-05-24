@@ -37,7 +37,7 @@ fi
 read -p "Installing common packages? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-  pacman -S \
+  pacman -S --needed \
     `# default for many other things` \
     tmux \
     autoconf \
@@ -89,7 +89,7 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     `# keyboard key remapping` \
     xcape
 
-  sudo -u $SUDO_USER yaourt -S \
+  sudo -u $SUDO_USER yaourt -S --needed \
     `# using fixed version of rxvt-unicode for fonts` \
     rxvt-unicode-wcwidthcallback \
     `# Generate and change colorschemes on the fly` \
@@ -103,7 +103,7 @@ fi
 read -p "Installing i3-gaps? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-  pacman -S \
+  pacman -S --needed \
     i3-gaps \
     i3lock \
     feh \
@@ -123,7 +123,7 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     `# display brightness control` \
     xorg-xbacklight
 
-  sudo -u $SUDO_USER yaourt -S \
+  sudo -u $SUDO_USER yaourt -S --needed \
     `# dependencies for polybar` \
     libmpdclient \
     python-iwlib \
@@ -138,7 +138,8 @@ fi
 read -p "Do you want to use the zsh-shell? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-  pacman -S zsh
+  pacman -S --needed \
+    zsh
   sudo -u $SUDO_USER chsh -s $(which zsh)
   stow zsh
 fi
