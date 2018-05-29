@@ -21,7 +21,11 @@ remotemounts=$(smbtree | grep -P '\t\t\\\\' | awk '{print $1}' | grep -v IPC)
 remotetarget=$(echo "$remotemounts" | rofi -dmenu -i -p "Connect to which server?")
 [[ "$remotetarget" = "" ]] && exit 1
 
-users=$(ls /home)
+## get UID limit ##
+l=$(grep "^UID_MIN" /etc/login.defs)
+## use awk to print if UID >= $UID_LIMIT ##
+users=$(awk -F':' -v "limit=${l##UID_MIN}" '{ if ( $3 >= limit ) print $1}' /etc/passwd)
+
 [[ "$users" = "" ]] && exit 1
 chosenuser=$(echo "$users" | rofi -dmenu -i -p "As which user you want to connect?")
 [[ "$chosenuser" = "" ]] && exit 1
