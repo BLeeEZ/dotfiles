@@ -60,6 +60,12 @@ exec --no-startup-id unclutter
 # Network Manager applet
 exec --no-startup-id nm-applet
 
+#---- Window config -----#
+#------------------------#
+for_window [instance="amounter"] floating enable
+for_window [instance="amounter"] resize set 500 150
+for_window [instance="amounter"] move position center
+
 #---- Using pywal colorscheme ----#
 #---------------------------------#
 # Set colors from Xresources
@@ -124,6 +130,9 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+e exec $term -e ~/bin/filem
 # open internet browser
 bindsym $mod+b exec $browser
+# open calculator
+bindsym $mod+m exec $term -n amounter -e ~/bin/amounter
+
 
 # split toggle
 bindsym $mod+t split toggle
