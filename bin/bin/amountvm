@@ -22,4 +22,6 @@ sharedfolders=$(vmware-hgfsclient)
 chosen=$(echo "$sharedfolders" | rofi -dmenu -i -p "Mount which shared folder?")
 [[ "$chosen" = "" ]] && exit 1
 get_mountpoint
+
+echo Mounting ${chosen} to ${mountpoint}
 sudo vmhgfs-fuse -o allow_other -o auto_unmount .host:${chosen} ${mountpoint} && notify_successfull_mount $chosen $mountpoint

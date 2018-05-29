@@ -32,4 +32,5 @@ chosenuser=$(echo "$users" | rofi -dmenu -i -p "As which user you want to connec
 
 get_mountpoint
 
+echo Mounting ${remotetarget} to ${mountpoint} as ${chosenuser}
 sudo mount -t cifs -o user=${chosenuser} ${remotetarget} ${mountpoint} && notify_successfull_mount $remotetarget $mountpoint
