@@ -51,6 +51,8 @@ exec --no-startup-id xautolock -time 5 -locker ~/bin/locker
 exec --no-startup-id dunst
 # Composite manager:
 exec --no-startup-id compton
+# Starts session manager
+exec --no-startup-id lxsession
 # Launch polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 # Runs the key remapping scripts

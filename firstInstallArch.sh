@@ -111,6 +111,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     feh \
     compton \
     rofi \
+    `# session manager` \
+    lxsession \
     `# notification-daemon` \
     libnotify \
     dunst \
