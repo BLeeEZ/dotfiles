@@ -16,6 +16,7 @@ function lock_screen() {
 
     # Lock it up!
     i3lock -e -f -c 000000 -i /tmp/screen.png
+    lock_pid=$(pgrep -x i3lock)
 }
 
 function lock_power_save() {
@@ -23,13 +24,15 @@ function lock_power_save() {
     screen_off_wait_time=$1
     suspend_wait_time=$2
 
+    # If already locked -> exit
     pgrep -x i3lock && exit 1
+    # Lock the screen
     lock_screen
     sleep $screen_off_wait_time && \
-        pgrep -x i3lock && \
+        ps --pid $lock_pid > /dev/null && \
         xset dpms force off && \
         sleep $suspend_wait_time && \
-        pgrep -x i3lock && \
+        ps --pid $lock_pid > /dev/null && \
         systemctl suspend
 }
 
