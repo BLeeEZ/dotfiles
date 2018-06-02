@@ -23,12 +23,13 @@ function lock_power_save() {
     screen_off_wait_time=$1
     suspend_wait_time=$2
 
+    pgrep -x i3lock && exit 1
     lock_screen
     sleep $screen_off_wait_time && \
-        pgrep i3lock && \
+        pgrep -x i3lock && \
         xset dpms force off && \
         sleep $suspend_wait_time && \
-        pgrep i3lock && \
+        pgrep -x i3lock && \
         systemctl suspend
 }
 
