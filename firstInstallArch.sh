@@ -120,6 +120,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     xautolock \
     `# command line display screenshot` \
     scrot \
+    `# termnial calender` \
+    calcurse \
     `# command line image manipulation` \
     imagemagick \
     `# network manager gui for the system tray` \
