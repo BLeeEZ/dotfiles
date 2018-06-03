@@ -40,7 +40,7 @@ padding-left = 0
 padding-right = 2
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
 font-0 = mono:pixelsize=10;1
 font-1 = FontAwesome:pixelsize=12;1
@@ -185,8 +185,9 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = 
+format = <label>
+; <bar>
+label =  %percentage%%
 
 bar-width = 6
 bar-indicator = |
@@ -198,6 +199,10 @@ bar-fill-foreground = #9f78e1
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.secondary}
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -277,12 +282,15 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
+; <bar-volume>
 label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
+format-volume-underline = #0a6cf5
 
 label-muted =  muted
 label-muted-foreground = ${colors.foreground-alt}
+format-muted-underline = #0a6cf5
 
 bar-volume-width = 6
 bar-volume-foreground-0 = #55aa55
