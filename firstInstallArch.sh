@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 
-# use the bash as default "sh", fixed some problems
-# with e.g. third-party scripts
-#sudo ln -sf /bin/bash /bin/sh
-
 function ask_install() {
-  echo
-  echo
   read -p"$1 (y/n) " -n 1
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -14,7 +8,23 @@ function ask_install() {
   else
     return 0
   fi
+}
 
+function ask_install_package_selection() {
+  ask_install "Install $1 packages?"
+  if [[ $? -eq 1 ]]; then
+    for x in $(cat ./archProgs.csv | grep -G ",$1," | awk -F, {'print $2","$1'})
+      do
+        installCmd=$(echo "$x,$SUDO_USER" | awk -F, {'
+          if ($1 == "pacman")
+            print $1" -S --needed "$2;
+          else
+            print "sudo -u "$3" "$1" -S --needed "$2;
+        '})
+        echo $installCmd
+        $installCmd
+      done
+  fi
 }
 
 # Make sure only root can run our script
@@ -36,9 +46,8 @@ if [[ $? -eq 1 ]]; then
 fi
 
 # Setting up network management?
-read -p "Setting up network management? (y/n)" -n 1 yesOrNo
-echo
-if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+ask_install "Setting up network management?"
+if [[ $? -eq 1 ]]; then
   pacman -S --needed \
     `# Networkmanager for wifi and DHCP` \
     networkmanager
@@ -48,10 +57,8 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
   systemctl start NetworkManager
 fi
 
-# Installing yaourt for AUR support (is required)?
-read -p "Installing yaourt for AUR support (is required)? (y/n)" -n 1 yesOrNo
-echo
-if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+ask_install "Installing yaourt for AUR support (is required)?"
+if [[ $? -eq 1 ]]; then
   # Installing yaourt
   cd /tmp
   git clone https://aur.archlinux.org/package-query.git
@@ -63,136 +70,33 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
   cd $DOTFILES_PATH
 fi
 
-# Installing common packages?
-read -p "Installing common packages? (y/n) " -n 1 yesOrNo
-echo
-if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-  pacman -S --needed \
-    `# default for many other things` \
-    tmux \
-    autoconf \
-    make \
-    cmake \
-    dialog \
-    openssh \
-    xorg-server \
-    xorg-xinit \
-    `# unzip, unrar etc.` \
-    zip \
-    unzip \
-    tar \
-    `# quickly find files on the filesystem based on their name` \
-    mlocate \
-    `# interactive processes viewer` \
-    htop \
-    `# interactive I/O viewer` \
-    iotop \
-    tree \
-    `# fonts for icons` \
-    awesome-terminal-fonts \
-    `# disk usage viewer` \
-    rsync \
-    whois \
-    vim \
-    emacs \
-    `# GNU bash` \
-    bash \
-    bash-completion \
-    `# internet browser with vim keys support` \
-    qutebrowser \
-    `# drawing images in terminal` \
-    w3m \
-    `# ranger previews highlighted` \
-    highlight \
-    `# command line file manager` \
-    ranger \
-    `# get files from web` \
-    wget \
-    curl \
-    `# repo-tools`\
-    git \
-    `# usefull tools` \
-    stow \
-    nodejs \
-    npm \
-    python \
-    python-pip \
-    python-setuptools \
-    python-wheel \
-    `# keyboard key remapping` \
-    xcape
+ask_install_package_selection basic
+ask_install_package_selection common
+ask_install_package_selection i3
 
-  sudo -u $SUDO_USER yaourt -S --needed \
-    `# Generate and change colorschemes on the fly` \
-    python-pywal
-
-  # Installing  st terminal
+ask_install "Installing st terminal?"
+if [[ $? -eq 1 ]]; then
   sudo make clean install -C st
 fi
 
-# Installing i3-gaps?
-read -p "Installing i3-gaps? (y/n) " -n 1 yesOrNo
-echo
-if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-  pacman -S --needed \
-    i3-gaps \
-    i3lock \
-    feh \
-    compton \
-    rofi \
-    `# session manager` \
-    lxsession \
-    `# notification-daemon` \
-    libnotify \
-    dunst \
-    `# calls prog after some time of user inactivity` \
-    xautolock \
-    `# command line display screenshot` \
-    scrot \
-    `# termnial calender` \
-    calcurse \
-    `# command line image manipulation` \
-    imagemagick \
-    `# network manager gui for the system tray` \
-    network-manager-applet \
-    `# display brightness control` \
-    xorg-xbacklight
-
-  sudo -u $SUDO_USER yaourt -S --needed \
-    `# dependencies for polybar` \
-    libmpdclient \
-    python-iwlib \
-    polybar-git \
-    `# Hide the mouse cursor if it is not being used` \
-    unclutter-xfixes-git
-
-  stow i3
-fi
-
-# try zsh?
-read -p "Do you want to use the zsh-shell? (y/n) " -n 1 yesOrNo
-echo
-if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+ask_install "Do you want to use the zsh-shell?"
+if [[ $? -eq 1 ]]; then
   pacman -S --needed \
     zsh
   sudo -u $SUDO_USER chsh -s $(which zsh)
   stow zsh
 fi
 
-# Install powerline fonts?
-read -p "Install patched powerline fonts? (y/n) " -n 1 yesOrNo
-echo
-if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-    # fc-list will list all installed fonts
-    source externals/powerline-fonts/install.sh
+ask_install "Install patched powerline fonts?"
+if [[ $? -eq 1 ]]; then
+  # fc-list will list all installed fonts
+  source externals/powerline-fonts/install.sh
 fi
 
-# Symlinking dotfiles via GNU stow?
-read -p "Symlinking dotfiles via GNU stow? (y/n) " -n 1 yesOrNo
-echo
-if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-    for i in bash emacs tmux qutebrowser bin fonts ranger X11
-    do
-        stow $i
-    done
+ask_install "Symlinking dotfiles via GNU stow?"
+if [[ $? -eq 1 ]]; then
+  for i in bash emacs tmux qutebrowser bin fonts ranger X11 i3
+  do
+    stow $i
+  done
 fi
