@@ -26,11 +26,41 @@ fi
 
 # Setting the Home path to the user who calls this script with sudo
 HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+# Save dotfiles path
+DOTFILES_PATH="$(cd "$(dirname "$0")" ; pwd -P )"
 
 # update && upgrade
 ask_install "Upgrade your system?"
 if [[ $? -eq 1 ]]; then
   pacman -Syu
+fi
+
+# Setting up network management?
+read -p "Setting up network management? (y/n)" -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+  pacman -S --needed \
+    `# Networkmanager for wifi and DHCP` \
+    networkmanager
+
+  # Activating NetworkManager
+  systemctl enable NetworkManager
+  systemctl start NetworkManager
+fi
+
+# Installing yaourt for AUR support (is required)?
+read -p "Installing yaourt for AUR support (is required)? (y/n)" -n 1 yesOrNo
+echo
+if [[ $yesOrNo =~ ^[Yy]$ ]]; then
+  # Installing yaourt
+  cd /tmp
+  git clone https://aur.archlinux.org/package-query.git
+  cd package-query/
+  makepkg -si && cd /tmp/
+  git clone https://aur.archlinux.org/yaourt.git
+  cd yaourt/
+  makepkg -si
+  cd $DOTFILES_PATH
 fi
 
 # Installing common packages?
@@ -44,7 +74,9 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     make \
     cmake \
     dialog \
-    yaourt \
+    openssh \
+    xorg-server \
+    xorg-xinit \
     `# unzip, unrar etc.` \
     zip \
     unzip \
@@ -66,7 +98,6 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     `# GNU bash` \
     bash \
     bash-completion \
-    zsh \
     `# internet browser with vim keys support` \
     qutebrowser \
     `# drawing images in terminal` \
