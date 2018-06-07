@@ -123,8 +123,6 @@ if [[ $yesOrNo =~ ^[Yy]$ ]]; then
     xcape
 
   sudo -u $SUDO_USER yaourt -S --needed \
-    `# using fixed version of rxvt-unicode for fonts` \
-    rxvt-unicode-wcwidthcallback \
     `# Generate and change colorschemes on the fly` \
     python-pywal
 
@@ -193,7 +191,7 @@ fi
 read -p "Symlinking dotfiles via GNU stow? (y/n) " -n 1 yesOrNo
 echo
 if [[ $yesOrNo =~ ^[Yy]$ ]]; then
-    for i in bash emacs urxvt tmux qutebrowser bin fonts ranger
+    for i in bash emacs tmux qutebrowser bin fonts ranger X11
     do
         stow $i
     done
