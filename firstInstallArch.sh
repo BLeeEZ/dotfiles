@@ -95,7 +95,7 @@ fi
 
 ask_install "Symlinking dotfiles via GNU stow?"
 if [[ $? -eq 1 ]]; then
-  for i in bash emacs tmux qutebrowser bin fonts ranger X11 i3
+  for i in bash emacs tmux qutebrowser bin fonts ranger X11 i3 git-config
   do
     stow $i
   done
