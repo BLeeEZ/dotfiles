@@ -215,6 +215,17 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
+# Vi mode:
+# displays current vi mode of command line
+prompt_vi_mode() {
+  case "$KEYMAP" in
+    "main")  prompt_segment green black "I" ;;
+    "viins") prompt_segment red black "B" ;;
+    "vicmd") prompt_segment yellow black "N" ;;
+    *)       prompt_segment green black "I" ;;
+  esac
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
@@ -225,6 +236,7 @@ build_prompt() {
   #prompt_git
   prompt_bzr
   prompt_hg
+  prompt_vi_mode
   prompt_end
 }
 
