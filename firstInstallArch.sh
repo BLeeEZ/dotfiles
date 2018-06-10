@@ -39,6 +39,13 @@ HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 # Save dotfiles path
 DOTFILES_PATH="$(cd "$(dirname "$0")" ; pwd -P )"
 
+# Select the type of machine, which is currently running
+ask_install "Specify the current machine type (needed for device dependent autostart)?"
+if [[ $? -eq 1 ]]; then
+  echo "echo laptop" > ~/bin/hosttype
+  chmod 755 ~/bin/hosttype 
+fi
+
 # update && upgrade
 ask_install "Upgrade your system?"
 if [[ $? -eq 1 ]]; then
