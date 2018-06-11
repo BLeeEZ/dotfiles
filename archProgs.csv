@@ -1,30 +1,27 @@
 ﻿tmux,pacman,basic,terminal muxer
 base-devel,pacman,basic,sudo and compilation software
 openssh,pacman,basic,get ssh to work
-xorg-server,pacman,basic,graphical environment
-xorg-xinit,pacman,basic,graphical environment
-zip,pacman,common,compression tool
-unzip,pacman,common,compression tool
-tar,pacman,common,compression tool
+git,pacman,basic,repo-tool
+stow,pacman,basic,symlinking dotfiles
+zip,pacman,basic,compression tool
+unzip,pacman,basic,compression tool
+tar,pacman,basic,compression tool
+wget,pacman,basic,get files from web
+curl,pacman,basic,get files from web
+rsync,pacman,basic,file syncronization
+whois,pacman,basic,get current user
+htop,pacman,basic,interactive processes viewer
 mlocate,pacman,common,quickly find files on the filesystem based on their name
-htop,pacman,common,interactive processes viewer
 iotop,pacman,common,interactive I/O viewer
 tree,pacman,common,interactive I/O viewer
 awesome-terminal-fonts,pacman,common,font for icons
-rsync,pacman,common,file syncronization
-whois,pacman,common,get current user
 vim,pacman,common,test editor
 emacs,pacman,common,test editor
 bash,pacman,common,GNU bash
-bash-completion,pacman,common,GNU bash
 qutebrowser,pacman,common,internet browser with vim keys support
 w3m,pacman,common,drawing images in terminal
 highlight,pacman,common,ranger previews highlighted
 ranger,pacman,common,command line file manager
-wget,pacman,common,get files from web
-curl,pacman,common,get files from web
-git,pacman,common,repo-tool
-stow,pacman,common,symlinking dotfiles
 nodejs,pacman,common,pakage manager
 npm,pacman,common,pakage manager
 python,pacman,common,python
@@ -33,6 +30,8 @@ python-setuptools,pacman,common,python
 python-wheel,pacman,common,python
 xcape,pacman,common,keyboard key remapping
 python-pywal,yaourt,common,color theme chnages
+xorg-server,pacman,i3,graphical environment
+xorg-xinit,pacman,i3,graphical environment
 i3-gaps,pacman,i3,window manager
 i3lock,pacman,i3,screen lock
 feh,pacman,i3,image viewer
