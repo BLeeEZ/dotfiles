@@ -57,6 +57,21 @@ if [[ $? -eq 1 ]]; then
     systemctl start NetworkManager
 fi
 
+ask_install_package_selection basic
+
+ask_install "Installing yaourt for AUR support (is required)?"
+if [[ $? -eq 1 ]]; then
+    # Installing yaourt
+    cd /tmp
+    git clone https://aur.archlinux.org/package-query.git
+    cd package-query/
+    makepkg -si && cd /tmp/
+    git clone https://aur.archlinux.org/yaourt.git
+    cd yaourt/
+    makepkg -si
+    cd $DOTFILES_PATH
+fi
+
 ask_install "Symlinking dotfiles via GNU stow?"
 if [[ $? -eq 1 ]]; then
     for i in bash emacs tmux qutebrowser bin fonts ranger X11 i3 git-config
@@ -85,20 +100,6 @@ if [[ $? -eq 1 ]]; then
     chmod 755 ~/bin/hosttype
 fi
 
-ask_install "Installing yaourt for AUR support (is required)?"
-if [[ $? -eq 1 ]]; then
-  # Installing yaourt
-  cd /tmp
-  git clone https://aur.archlinux.org/package-query.git
-  cd package-query/
-  makepkg -si && cd /tmp/
-  git clone https://aur.archlinux.org/yaourt.git
-  cd yaourt/
-  makepkg -si
-  cd $DOTFILES_PATH
-fi
-
-ask_install_package_selection basic
 ask_install_package_selection common
 ask_install_package_selection i3
 
