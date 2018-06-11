@@ -30,6 +30,7 @@ python-setuptools,pacman,common,python
 python-wheel,pacman,common,python
 xcape,pacman,common,keyboard key remapping
 python-pywal,yaourt,common,color theme chnages
+libreoffice-fresh,pacman,common,office suite
 xorg-server,pacman,i3,graphical environment
 xorg-xinit,pacman,i3,graphical environment
 i3-gaps,pacman,i3,window manager
