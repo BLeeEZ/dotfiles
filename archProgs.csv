@@ -1,4 +1,4 @@
-﻿tmux,pacman,basic,terminal muxer
+tmux,pacman,basic,terminal muxer
 base-devel,pacman,basic,sudo and compilation software
 openssh,pacman,basic,get ssh to work
 git,pacman,basic,repo-tool
@@ -29,6 +29,9 @@ python-pip,pacman,common,python
 python-setuptools,pacman,common,python
 python-wheel,pacman,common,python
 xcape,pacman,common,keyboard key remapping
+pass,pacman,common,password manager
+python-tldextract,pacman,common,dependencies for qutebrowsers qute-pass
+rofi-pass,yaourt,common,password selector for pass
 python-pywal,yaourt,common,color theme chnages
 libreoffice-fresh,pacman,common,office suite
 xorg-server,pacman,i3,graphical environment
