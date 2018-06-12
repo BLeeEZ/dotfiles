@@ -59,7 +59,7 @@ fi
 
 ask_install_package_selection basic
 
-ask_install "Installing yaourt for AUR support (is required)?"
+ask_install "Install yaourt for AUR support (is required)?"
 if [[ $? -eq 1 ]]; then
     # Installing yaourt
     cd /tmp
@@ -85,7 +85,7 @@ if [[ $? -eq 1 ]]; then
     pacman -S --needed \
         `# Tool for user selection and dialog displaying for command line` \
         dialog
-    selctionCmd=(dialog --title "Specify the current machine type?" --menu "Choose one of the following options:" 15 40 4)
+    selctionCmd=(dialog --no-cancel --title "Specify the current machine type?" --menu "Choose one of the following options:" 15 40 4)
     options=(1 "PC"
              2 "Laptop"
              3 "VM")
@@ -108,7 +108,7 @@ if [[ $? -eq 1 ]]; then
   sudo make clean install -C st
 fi
 
-ask_install "Do you want to use the zsh-shell?"
+ask_install "Install zsh-shell?"
 if [[ $? -eq 1 ]]; then
   pacman -S --needed \
     zsh
