@@ -47,8 +47,8 @@ font-1 = FontAwesome:pixelsize=12;1
 font-2 = Hack:pixelsize=10;1
 
 modules-left = bspwm i3
-modules-center = mpd
-modules-right = filesystem home xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-center = mpd date
+modules-right = filesystem home xbacklight pulseaudio memory cpu wlan eth battery temperature powermenu
 
 tray-position = right
 tray-padding = 2
@@ -269,13 +269,13 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+date = "%a %d.%m"
+;date-alt = "%Y-%m-%d"
 
 time = %H:%M
-time-alt = %H:%M:%S
+;time-alt = %H:%M:%S
 
-format-prefix = 
+;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
