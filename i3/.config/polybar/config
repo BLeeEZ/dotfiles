@@ -270,7 +270,7 @@ type = custom/script
 interval = 5
 
 exec = date '+%a %d.%m %H:%M'
-click-left = st -e calcurse
+click-left = $TERMINAL -e zsh -c 'cal -ym; read -rs'
 
 ;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
