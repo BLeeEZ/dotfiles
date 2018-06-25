@@ -36,7 +36,7 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-padding-left = 0
+padding-left = 2
 padding-right = 2
 
 module-margin-left = 1
@@ -46,9 +46,9 @@ font-0 = mono:pixelsize=10;1
 font-1 = FontAwesome:pixelsize=12;1
 font-2 = Hack:pixelsize=10;1
 
-modules-left = bspwm i3
+modules-left = powermenu bspwm i3
 modules-center = mpd date
-modules-right = filesystem home xbacklight pulseaudio memory cpu wlan eth battery temperature powermenu
+modules-right = filesystem home xbacklight pulseaudio memory cpu wlan eth battery temperature
 
 tray-position = right
 tray-padding = 2
@@ -399,7 +399,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close = 
 label-close-foreground = ${colors.secondary}
