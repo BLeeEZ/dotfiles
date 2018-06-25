@@ -279,15 +279,19 @@ format-underline = #0a6cf5
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume>
+format-volume = <ramp-volume> <label-volume>
 ; <bar-volume>
-label-volume =  %percentage%%
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 format-volume-underline = #0a6cf5
 
 label-muted =  muted
 label-muted-foreground = ${colors.foreground-alt}
 format-muted-underline = #0a6cf5
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 bar-volume-width = 6
 bar-volume-foreground-0 = #55aa55
