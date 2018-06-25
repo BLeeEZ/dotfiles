@@ -188,7 +188,7 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label>
+format = <ramp> <label>
 ; <bar>
 label =  %percentage%%
 
@@ -203,9 +203,13 @@ bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
-format-prefix = " "
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 
 [module/backlight-acpi]
 inherit = module/xbacklight
