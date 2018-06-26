@@ -6,4 +6,4 @@ function createReport() {
     curl -s wttr.in/Aschaffenburg 
 }
 
-createReport | less -RS
+createReport

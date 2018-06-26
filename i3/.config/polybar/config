@@ -275,7 +275,7 @@ type = custom/script
 interval = 5
 
 exec = echo  
-click-left = $TERMINAL -e zsh -c 'assistant'
+click-left = $TERMINAL -n assistant -e zsh -c 'assistant; read -rs'
 
 ;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
