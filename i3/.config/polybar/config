@@ -107,8 +107,10 @@ interval = 25
 mount-0 = /home
 
 label-mounted = %{F#0a81f5}%{F-}: %percentage_used%%
+label-mounted-underline = #0a6cf5
 label-unmounted =  not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-underline = #0a6cf5
 
 [module/bspwm]
 type = internal/bspwm
@@ -279,7 +281,7 @@ click-left = $TERMINAL -n assistant -e zsh -c 'assistant | less -RS'
 
 ;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+;format-underline = #0a6cf5
 
 [module/date]
 type = custom/script
@@ -290,7 +292,7 @@ click-left = $TERMINAL -e zsh -c 'cal -ym; read -rs'
 
 ;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+;format-underline = #0a6cf5
 
 [module/pulseaudio]
 type = internal/pulseaudio
