@@ -1,7 +1,8 @@
 #!/bin/zsh
 
 function createReport() {
-    echo "BLeeEZ's report" | figlet | lolcat
+    date_string=$(date '+%a %d.%m')
+    echo "BLeeEZ's report ${date_string}"  | figlet -ct | lolcat
     echo
     curl -s wttr.in/Aschaffenburg 
 }
