@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+function createReport() {
+    echo "BLeeEZ's report" | figlet | lolcat
+    echo
+    curl -s wttr.in/Aschaffenburg 
+}
+
+createReport | less -RS

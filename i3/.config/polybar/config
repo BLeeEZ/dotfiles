@@ -47,7 +47,7 @@ font-1 = FontAwesome:pixelsize=12;1
 font-2 = Hack:pixelsize=10;1
 
 modules-left = powermenu bspwm i3
-modules-center = mpd date
+modules-center = mpd assistant date
 modules-right = home memory cpu temperature battery xbacklight pulseaudio
 ;modules-right = filesystem wlan eth
 
@@ -269,6 +269,17 @@ format-disconnected =
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/assistant]
+type = custom/script
+interval = 5
+
+exec = echo  
+click-left = $TERMINAL -e zsh -c 'assistant'
+
+;format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
 
 [module/date]
 type = custom/script
