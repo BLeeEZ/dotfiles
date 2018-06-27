@@ -4,7 +4,8 @@ function createReport() {
     date_string=$(date '+%a %d.%m')
     echo "BLeeEZ's report ${date_string}"  | figlet -ct | lolcat -f
     echo
-    curl -s wttr.in/Aschaffenburg 
+    type cassist &> /dev/null && cassist;
+    curl -s wttr.in/Aschaffenburg
 }
 
 createReport
