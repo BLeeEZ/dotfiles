@@ -9,7 +9,7 @@ alias gdl="cd ~/Downloads/"
 export PATH=$PATH:$HOME/bin
 export EDITOR="emacsclient -nw --alternate-editor '' -c"
 export TERMINAL="st"
-export BROWSER="qutebrowser"
+export BROWSER="firefox"
 
 # language
 export LC_COLLATE=en_US.UTF-8
