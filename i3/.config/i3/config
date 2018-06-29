@@ -68,9 +68,9 @@ for_window [instance="amounter"] floating enable
 for_window [instance="amounter"] resize set 500 150
 for_window [instance="amounter"] move position center
 
-for_window [instance="assistant"] floating enable
-for_window [instance="assistant"] resize set 1010 700
-for_window [instance="assistant"] move position center
+for_window [instance="dailyreport"] floating enable
+for_window [instance="dailyreport"] resize set 1010 700
+for_window [instance="dailyreport"] move position center
 
 #---- Using pywal colorscheme ----#
 #---------------------------------#
