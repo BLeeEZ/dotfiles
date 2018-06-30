@@ -36,6 +36,7 @@ python-pywal,yaourt,common,color theme chnages
 libreoffice-fresh,pacman,common,office suite
 figlet,pacman,common,ascii art string creator
 lolcat,pacman,common,create colorfull pipe outputs
+visual-studio-code-bin,yaourt,common,editor for development
 xorg-server,pacman,i3,graphical environment
 xorg-xinit,pacman,i3,graphical environment
 i3-gaps,pacman,i3,window manager
