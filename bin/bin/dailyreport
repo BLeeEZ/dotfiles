@@ -1,8 +1,15 @@
 #!/bin/zsh
 
+source ~/.zshrc
+
 function createReport() {
     date_string=$(date '+%a %d.%m')
     echo "BLeeEZ's report ${date_string}"  | figlet -ct | lolcat -f
+    echo
+    home_work_duration=$(travelduration $homelocation $worklocation)
+    work_home_duration=$(travelduration $worklocation $homelocation)
+    echo "Frome home to work with car: $home_work_duration"
+    echo "Frome work to home with car: $work_home_duration"
     echo
     type cloudassist &> /dev/null && cloudassist -w -s report;
     curl -s wttr.in/Aschaffenburg

@@ -74,6 +74,7 @@ fi
 
 ask_install "Symlinking dotfiles via GNU stow?"
 if [[ $? -eq 1 ]]; then
+    [[ ! -f zsh/.zsh/personal.zsh ]]; cp zsh/.zsh/personal.zsh.default zsh/.zsh/personal.zsh
     for i in bash emacs tmux qutebrowser bin fonts ranger X11 i3 git-config
     do
         stow $i
