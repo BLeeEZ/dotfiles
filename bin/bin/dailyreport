@@ -8,11 +8,12 @@ function createReport() {
     echo
     home_work_duration=$(travelduration $homelocation $worklocation)
     work_home_duration=$(travelduration $worklocation $homelocation)
-    echo "Frome home to work with car: $home_work_duration"
-    echo "Frome work to home with car: $work_home_duration"
+    echo "Traveling duration by car:"
+    echo "Home - Work: $home_work_duration"
+    echo "Work - Home: $work_home_duration"
     echo
     type cloudassist &> /dev/null && cloudassist -w -s report;
-    curl -s wttr.in/Aschaffenburg
+    curl -s wttr.in/$homelocation
 }
 
 createReport

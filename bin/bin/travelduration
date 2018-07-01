@@ -1,10 +1,21 @@
 #!/usr/bin/env python
 
 import sys,simplejson, urllib.request
+
 origin = sys.argv[1]
 destination = sys.argv[2]
-url = "http://maps.googleapis.com/maps/api/distancematrix/json?origins={0}&destinations={1}&mode=driving&language=en-EN&sensor=false".format(str(origin),str(destination))
-url_respond = urllib.request.urlopen(url)
-result= simplejson.load( url_respond )
+
+url_side = "http://maps.googleapis.com/maps/api/distancematrix/json?"
+values = {'origins' : origin,
+'destinations' : destination,
+'mode' : 'driving',
+'language' : 'en-EN',
+'sensor' : 'false'}
+
+data = urllib.parse.urlencode(values)
+url_comp = url_side + data
+ 
+url_respond = urllib.request.urlopen(url_comp)
+result = simplejson.load(url_respond)
 driving_time = result['rows'][0]['elements'][0]['duration']['text']
 print(str(driving_time))
