@@ -4,18 +4,27 @@ import sys,simplejson, urllib.request
 
 origin = sys.argv[1]
 destination = sys.argv[2]
+if len(sys.argv) >= 4:
+    api_key = sys.argv[3]
+else:
+    api_key = ''
 
-url_side = "http://maps.googleapis.com/maps/api/distancematrix/json?"
+url_side = "https://maps.googleapis.com/maps/api/distancematrix/json?"
 values = {'origins' : origin,
 'destinations' : destination,
 'mode' : 'driving',
 'language' : 'en-EN',
-'sensor' : 'false'}
+'sensor' : 'false',
+'departure_time' : 'now',
+'key' : api_key}
 
 data = urllib.parse.urlencode(values)
 url_comp = url_side + data
- 
+
 url_respond = urllib.request.urlopen(url_comp)
 result = simplejson.load(url_respond)
-driving_time = result['rows'][0]['elements'][0]['duration']['text']
+if api_key != '':
+    driving_time = result['rows'][0]['elements'][0]['duration_in_traffic']['text']
+else:
+    driving_time = result['rows'][0]['elements'][0]['duration']['text']
 print(str(driving_time))

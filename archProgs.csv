@@ -38,6 +38,7 @@ figlet,pacman,common,ascii art string creator
 lolcat,pacman,common,create colorfull pipe outputs
 visual-studio-code-bin,yaourt,common,editor for development
 python-urllib3,pacman,common,dependency for dailyreport to poll http sites
+python-simplejson,pacman,common,dependency for dailyreport to interpret json
 xorg-server,pacman,i3,graphical environment
 xorg-xinit,pacman,i3,graphical environment
 i3-gaps,pacman,i3,window manager

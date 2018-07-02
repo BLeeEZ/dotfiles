@@ -6,8 +6,8 @@ function createReport() {
     date_string=$(date '+%a %d.%m')
     echo "BLeeEZ's report ${date_string}"  | figlet -ct | lolcat -f
     echo
-    home_work_duration=$(travelduration $homelocation $worklocation)
-    work_home_duration=$(travelduration $worklocation $homelocation)
+    home_work_duration=$(travelduration $homelocation $worklocation $googleapi)
+    work_home_duration=$(travelduration $worklocation $homelocation $googleapi)
     echo "Traveling duration by car:"
     echo "Home - Work: $home_work_duration"
     echo "Work - Home: $work_home_duration"
