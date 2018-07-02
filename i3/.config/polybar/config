@@ -288,7 +288,7 @@ type = custom/script
 interval = 5
 
 exec = date '+%a %d.%m %H:%M'
-click-left = $TERMINAL -e zsh -c 'cal -ym; read -rs'
+click-left = $TERMINAL -e zsh -c 'cal -ym | less -RS'
 
 ;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
