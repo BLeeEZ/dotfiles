@@ -13,7 +13,8 @@ function createReport() {
     echo "Work - Home: $work_home_duration"
     echo
     type cloudassist &> /dev/null && cloudassist -w -s report;
-    curl -s wttr.in/$homelocation
+    homelocation_as_url=$(convtourl $homelocation)
+    curl -s wttr.in/$homelocation_as_url
 }
 
 createReport

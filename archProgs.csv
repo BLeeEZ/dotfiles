@@ -28,6 +28,7 @@ python,pacman,common,python
 python-pip,pacman,common,python
 python-setuptools,pacman,common,python
 python-wheel,pacman,common,python
+Python-pylint,pacman,common,linter for python development
 xcape,pacman,common,keyboard key remapping
 pass,pacman,common,password manager
 python-tldextract,pacman,common,dependency for qutebrowsers qute-pass
