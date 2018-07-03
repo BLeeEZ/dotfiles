@@ -18,6 +18,7 @@ awesome-terminal-fonts,pacman,common,font for icons
 vim,pacman,common,test editor
 emacs,pacman,common,test editor
 bash,pacman,common,GNU bash
+firefox,pacman,common,internet browser
 qutebrowser,pacman,common,internet browser with vim keys support
 w3m,pacman,common,drawing images in terminal
 highlight,pacman,common,ranger previews highlighted
