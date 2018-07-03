@@ -2,19 +2,36 @@
 
 source ~/.zshrc
 
-function createReport() {
+function create_report_header() {
     date_string=$(date '+%a %d.%m')
     echo "BLeeEZ's report ${date_string}"  | figlet -ct | lolcat -f
-    echo
+}
+
+function create_travel_duration_report() {
     home_work_duration=$(travelduration $homelocation $worklocation $googleapi)
     work_home_duration=$(travelduration $worklocation $homelocation $googleapi)
     echo "Traveling duration by car:"
-    echo "Home - Work: $home_work_duration"
-    echo "Work - Home: $work_home_duration"
-    echo
+    echo "       : $home_work_duration"
+    echo "       : $work_home_duration"
+}
+
+function create_calendar_report() {
     type cloudassist &> /dev/null && cloudassist -w -s report;
     homelocation_as_url=$(convtourl $homelocation)
+}
+
+function create_weather_report() {
     curl -s wttr.in/$homelocation_as_url
+}
+
+function createReport() {
+    create_report_header
+    echo
+    create_travel_duration_report
+    echo
+    create_calendar_report
+    echo
+    create_weather_report
 }
 
 createReport
