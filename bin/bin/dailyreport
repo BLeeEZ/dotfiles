@@ -28,7 +28,7 @@ function createReport() {
     (
     create_report_header
     echo
-    create_travel_duration_report
+    create_travel_duration_report | centeroutput
     echo
     create_calendar_report
     ) | lolcat -f

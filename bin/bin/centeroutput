@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+width=$(tput cols)
+while IFS= read -r line
+do
+  printf "%$((width/2 - ${#line}/2))s%s\n" "" "$line"
+done
