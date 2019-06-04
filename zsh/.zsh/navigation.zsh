@@ -7,11 +7,11 @@ alias md='mkdir -p'
 alias rd=rmdir
 
 # List directory contents
-alias ls='ls --color=yes'
-alias lsa='ls -lah --color=yes'
-alias l='ls -lah --color=yes'
-alias ll='ls -lh --color=yes'
-alias la='ls -lAh --color=yes'
+alias ls='ls'
+alias lsa='ls'
+alias l='ls -lah'
+alias ll='ls -lh'
+alias la='ls -lAh'
 
 alias xreload="xrdb ~/.Xresources"
 alias gdot="cd ~/dotfiles/"
