@@ -5,6 +5,7 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 export PATH=$PATH:$HOME/bin
-export EDITOR="emacsclient -nw --alternate-editor '' -c"
+export PATH=$PATH:/usr/local/bin
+export EDITOR="vim"
 export TERMINAL="st"
 export BROWSER="qutebrowser"

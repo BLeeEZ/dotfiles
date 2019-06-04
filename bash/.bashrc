@@ -38,11 +38,11 @@ alias md='mkdir -p'
 alias rd=rmdir
 
 # List directory contents
-alias ls='ls --color=yes'
-alias lsa='ls -lah --color=yes'
-alias l='ls -lah --color=yes'
-alias ll='ls -lh --color=yes'
-alias la='ls -lAh --color=yes'
+alias ls='ls'
+alias lsa='ls -lah'
+alias l='ls -lah'
+alias ll='ls -lh'
+alias la='ls -lAh'
 
 alias xreload="xrdb ~/.Xresources"
 alias gdot="cd ~/dotfiles/"
@@ -50,17 +50,12 @@ alias gdoc="cd ~/Documents/"
 alias gpic="cd ~/Pictures/"
 alias gdl="cd ~/Downloads/"
 
-# Emacs
-export EMACS_LAUNCHER='emacsclient --alternate-editor ""'
-alias emacs="$EMACS_LAUNCHER --no-wait"
-alias e="$EMACS_LAUNCHER"
-alias te="$EMACS_LAUNCHER -nw"
-
 # path adjustments
 export PATH=$PATH:$HOME/bin
-export EDITOR="emacsclient -nw --alternate-editor '' -c"
+export PATH=$PATH:/usr/local/bin
+export EDITOR="vim"
 export TERMINAL="st"
-export BROWSER="qutebrowser"
+export BROWSER="firefox"
 
 # language
 export LC_COLLATE=en_US.UTF-8
@@ -81,9 +76,8 @@ export LESSCHARSET=utf-8
 # while eliminating the delay exiting vi insert mode.
 KEYTIMEOUT=50
 
-# changing dircolors
-#eval `dircolors ~/.dircolors`
-eval "$(dircolors ~/.dircolors)"
+# activating dircolors
+export CLICOLOR=YES
 
 # git aliase
 alias g='git'
