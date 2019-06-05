@@ -1,0 +1,44 @@
+"
+" Colors
+"
+" enable syntax processing
+syntax enable
+" set colorscheme to solarized dark
+set background=dark
+colorscheme solarized
+"
+" Spaces & Tabs
+"
+" number of visual spaces per TAB
+set tabstop=4       
+" number of spaces in tab when editing
+set softtabstop=4   
+"
+" UI Config
+"
+" show line numbers
+set relativenumber
+" highlight current line
+set cursorline          
+" load filetype-specific indent files
+filetype indent on      
+" visual autocomplete for command menu
+set wildmenu            
+" redraw only when we need to.
+set lazyredraw          
+" highlight matching [{()}]
+set showmatch           
+"
+" Leader Shortcuts
+"
+" leader is comma
+let mapleader=","       
+"
+" Searching
+"
+" search as characters are entered
+set incsearch           
+" highlight matches
+set hlsearch            
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>

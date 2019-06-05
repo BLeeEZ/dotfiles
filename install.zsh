@@ -5,7 +5,7 @@ echo Install stow
 brew install stow
 
 echo Preapre config files
-for i in bash bin ranger tmux zsh
+for i in bash bin ranger tmux zsh vim
 do
     echo stow $i
     stow $i
