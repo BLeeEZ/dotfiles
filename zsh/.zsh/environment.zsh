@@ -31,5 +31,5 @@ export LESSCHARSET=utf-8
 # while eliminating the delay exiting vi insert mode.
 KEYTIMEOUT=50
 
-# activating dircolors
-export CLICOLOR=YES
+# changing dircolors
+eval `dircolors ~/.zsh/dircolors`
