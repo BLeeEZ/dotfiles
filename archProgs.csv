@@ -1,0 +1,28 @@
+tmux,pacman,basic,terminal muxer
+openssh,pacman,basic,get ssh to work
+git,pacman,basic,repo-tool
+stow,pacman,basic,symlinking dotfiles
+zip,pacman,basic,compression tool
+unzip,pacman,basic,compression tool
+tar,pacman,basic,compression tool
+wget,pacman,basic,get files from web
+curl,pacman,basic,get files from web
+rsync,pacman,basic,file syncronization
+whois,pacman,basic,get current user
+htop,pacman,basic,interactive processes viewer
+mlocate,pacman,common,quickly find files on the filesystem based on their name
+iotop,pacman,common,interactive I/O viewer
+tree,pacman,common,interactive I/O viewer
+ranger,pacman,common,command line file manager
+vim,pacman,common,test editor
+firefox,pacman,common,internet browser
+nodejs,pacman,common,pakage manager
+npm,pacman,common,pakage manager
+python,pacman,common,python
+python-pip,pacman,common,python
+python-setuptools,pacman,common,python
+python-wheel,pacman,common,python
+Python-pylint,pacman,common,linter for python development
+figlet,pacman,common,ascii art string creator
+lolcat,pacman,common,create colorfull pipe outputs
+code,pacman,common,editor for development
