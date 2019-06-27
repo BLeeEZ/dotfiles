@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Make sure only root can run our script
+# Make sure only root can run the script
 if [ "$(id -u)" != "0" ]; then
   echo "This script must be run as root"
   echo "Plese use sudo or su"
@@ -49,6 +49,17 @@ if [[ $? -eq 1 ]]; then
   sudo -u $SUDO_USER chsh -s $(which zsh)
   stow zsh
 fi
+
+ask_install "Install yay as AUR helper?"
+if [[ $? -eq 1 ]]; then
+  sudo -u $SUDO_USER git clone https://aur.archlinux.org/yay.git
+  cd yay
+  sudo -u $SUDO_USER makepkg -si
+  cd ..
+  rm -R yay
+fi
+
+ask_install_package_selection AUR
 
 ask_install "Symlinking dotfiles via GNU stow?"
 if [[ $? -eq 1 ]]; then

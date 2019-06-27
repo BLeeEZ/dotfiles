@@ -1,3 +1,4 @@
+base-devel,pacman,basic,sudo and compilation software
 tmux,pacman,basic,terminal muxer
 openssh,pacman,basic,get ssh to work
 git,pacman,basic,repo-tool
@@ -26,3 +27,4 @@ Python-pylint,pacman,common,linter for python development
 figlet,pacman,common,ascii art string creator
 lolcat,pacman,common,create colorfull pipe outputs
 code,pacman,common,editor for development
+tor-browser,yay,AUR,anonymous web browser
