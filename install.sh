@@ -25,8 +25,12 @@ function ask_install_package_selection() {
         installCmd=$(echo "$x,$SUDO_USER" | awk -F, {'
           if ($1 == "pacman")
             print $1" -S --needed "$2;
-          else
+          else if ($1 == "yay")
             print "sudo -u "$3" "$1" -S --needed "$2;
+          else if ($1 == "code")
+            print "sudo -u "$3" "$1" --install-extension "$2;
+          else
+            print "Error <"$1"> is not a valid command";
         '})
         echo $installCmd
         $installCmd
@@ -60,10 +64,11 @@ if [[ $? -eq 1 ]]; then
 fi
 
 ask_install_package_selection AUR
+ask_install_package_selection vs-code
 
 ask_install "Symlinking dotfiles via GNU stow?"
 if [[ $? -eq 1 ]]; then
-  for i in bash profile bin ranger tmux vim
+  for i in bash profile bin ranger tmux vim vs-code
   do
     echo stow $i
     stow $i

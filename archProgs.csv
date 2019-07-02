@@ -29,3 +29,5 @@ lolcat,pacman,common,create colorfull pipe outputs
 code,pacman,common,editor for development
 tor-browser,yay,AUR,anonymous web browser
 keeweb-desktop,yay,AUR,password manager compatible with KeePass databases
+vscodevim.vim,code,vs-code,Vim emulation for Visual Studio Code
+ms-python.python,code,vs-code,Python package for vs-code: Linting Debugging Intellisense...

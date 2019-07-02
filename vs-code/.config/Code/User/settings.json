@@ -1,0 +1,27 @@
+{
+    "explorer.confirmDelete": false,
+    "editor.lineNumbers": "relative",
+    "window.zoomLevel": 0,
+    "editor.renderWhitespace": "all",
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": false,
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ],
+    "workbench.colorTheme": "Solarized Dark"
+}
