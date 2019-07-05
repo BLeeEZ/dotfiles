@@ -75,6 +75,6 @@ if [[ $? -eq 1 ]]; then
   for i in bash profile bin ranger tmux vim vs-code
   do
     echo stow $i
-    stow $i
+    sudo -u $SUDO_USER stow $i
   done
 fi
