@@ -29,6 +29,7 @@ alias gmom='git merge origin/master'
 alias gmt='git mergetool --no-prompt'
 
 alias gp='git push'
+alias gpo='git push origin'
 
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'

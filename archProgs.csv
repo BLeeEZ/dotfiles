@@ -15,7 +15,7 @@ mlocate,pacman,common,quickly find files on the filesystem based on their name
 iotop,pacman,common,interactive I/O viewer
 tree,pacman,common,interactive I/O viewer
 ranger,pacman,common,command line file manager
-vim,pacman,common,test editor
+vim,pacman,common,terminal text editor
 firefox,pacman,common,internet browser
 nodejs,pacman,common,pakage manager
 npm,pacman,common,pakage manager
