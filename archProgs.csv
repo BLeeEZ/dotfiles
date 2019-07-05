@@ -33,3 +33,4 @@ vscodevim.vim,code,vs-code,vim emulation for Visual Studio Code
 ms-python.python,code,vs-code,python package for vs-code: Linting Debugging Intellisense...
 GrapeCity.gc-excelviewer,code,vs-code,view Excel spreadsheets and CSV files
 mechatroner.rainbow-csv,code,vs-code,highlight CSV and TSV files in different colors
+DavidAnson.vscode-markdownlint,code, vs-code,markdown linting and style checking
