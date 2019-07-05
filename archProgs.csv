@@ -29,5 +29,7 @@ lolcat,pacman,common,create colorfull pipe outputs
 code,pacman,common,editor for development
 tor-browser,yay,AUR,anonymous web browser
 keeweb-desktop,yay,AUR,password manager compatible with KeePass databases
-vscodevim.vim,code,vs-code,Vim emulation for Visual Studio Code
-ms-python.python,code,vs-code,Python package for vs-code: Linting Debugging Intellisense...
+vscodevim.vim,code,vs-code,vim emulation for Visual Studio Code
+ms-python.python,code,vs-code,python package for vs-code: Linting Debugging Intellisense...
+GrapeCity.gc-excelviewer,code,vs-code,view Excel spreadsheets and CSV files
+mechatroner.rainbow-csv,code,vs-code,highlight CSV and TSV files in different colors
