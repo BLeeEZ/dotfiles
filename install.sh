@@ -57,10 +57,14 @@ fi
 ask_install "Install yay as AUR helper?"
 if [[ $? -eq 1 ]]; then
   sudo -u $SUDO_USER git clone https://aur.archlinux.org/yay.git
-  cd yay
-  sudo -u $SUDO_USER makepkg -si
-  cd ..
-  rm -R yay
+  if [ $? -eq 0 ]; then
+    cd yay
+    sudo -u $SUDO_USER makepkg -si
+    cd ..
+    rm -R yay
+  else
+    echo "Abort yay installation: git clone failed"
+  fi
 fi
 
 ask_install_package_selection AUR
