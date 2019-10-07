@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-# Make sure only root can run the script
-if [ "$(id -u)" != "0" ]; then
-  echo "This script must be run as root"
-  echo "Plese use sudo or su"
+# make sure only normal user run our script
+if [ "$(id -u)" == "0" ]; then
+  echo "This script must be run as normal user NOT as root"
   exit 1
 fi
 
@@ -24,11 +23,11 @@ function ask_install_package_selection() {
       do
         installCmd=$(echo "$x,$SUDO_USER" | awk -F, {'
           if ($1 == "pacman")
-            print $1" -S --needed "$2;
+            print "sudo pacman -S --needed "$2;
           else if ($1 == "yay")
-            print "sudo -u "$3" "$1" -S --needed "$2;
+            print "yay -S --needed "$2;
           else if ($1 == "code")
-            print "sudo -u "$3" "$1" --install-extension "$2;
+            print "code --install-extension "$2;
           else
             print "Error <"$1"> is not a valid command";
         '})
@@ -40,7 +39,7 @@ function ask_install_package_selection() {
 
 ask_install "Upgrade your system?"
 if [[ $? -eq 1 ]]; then
-  pacman -Syu
+  sudo pacman -Syu
 fi
 
 ask_install_package_selection basic
@@ -48,18 +47,18 @@ ask_install_package_selection common
 
 ask_install "Install zsh-shell?"
 if [[ $? -eq 1 ]]; then
-  pacman -S --needed zsh
+  sudo pacman -S --needed zsh
   echo Change default shell to zsh
-  sudo -u $SUDO_USER chsh -s $(which zsh)
+  chsh -s $(which zsh)
   stow zsh
 fi
 
 ask_install "Install yay as AUR helper?"
 if [[ $? -eq 1 ]]; then
-  sudo -u $SUDO_USER git clone https://aur.archlinux.org/yay.git
+  git clone https://aur.archlinux.org/yay.git
   if [ $? -eq 0 ]; then
     cd yay
-    sudo -u $SUDO_USER makepkg -si
+    makepkg -si
     cd ..
     rm -R yay
   else
@@ -75,6 +74,6 @@ if [[ $? -eq 1 ]]; then
   for i in bash profile bin ranger tmux vim vs-code
   do
     echo stow $i
-    sudo -u $SUDO_USER stow $i
+    stow $i
   done
 fi
