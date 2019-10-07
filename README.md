@@ -1,7 +1,6 @@
-# dotfiles
+# BLeeEZ's dotfiles
 
-There are several configs available for different desktop environments:
+There are two configs available:
 
-- [i3](https://github.com/BLeeEZ/dotfiles/tree/i3)
-- [gnome](https://github.com/BLeeEZ/dotfiles/tree/gnome)
-- [mac](https://github.com/BLeeEZ/dotfiles/tree/mac)
+- Arch linux gnome: linux_install.sh
+- MacOs: mac_install.sh

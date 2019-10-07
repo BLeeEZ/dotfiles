@@ -1,10 +1,3 @@
-# alias
-alias xreload="xrdb ~/.Xresources"
-alias gdot="cd ~/dotfiles/"
-alias gdoc="cd ~/Documents/"
-alias gpic="cd ~/Pictures/"
-alias gdl="cd ~/Downloads/"
-
 # path adjustments
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/usr/local/bin
@@ -30,6 +23,3 @@ export LESSCHARSET=utf-8
 # This allows escape sequences like cursor/arrow keys to work,
 # while eliminating the delay exiting vi insert mode.
 KEYTIMEOUT=50
-
-# changing dircolors
-eval `dircolors ~/.zsh/dircolors`
