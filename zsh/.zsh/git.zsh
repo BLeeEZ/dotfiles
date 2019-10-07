@@ -31,6 +31,8 @@ alias gmt='git mergetool --no-prompt'
 alias gp='git push'
 alias gpo='git push origin'
 
+alias gpl='git pull'
+
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 
