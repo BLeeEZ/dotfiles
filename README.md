@@ -1,6 +1,7 @@
 # BLeeEZ's dotfiles
 
-There are two configs available:
+There are three configs available:
 
-- Arch linux gnome: linux_install.sh
+- Debian linux gnome: debian_install.sh
+- Arch linux gnome: arch_install.sh
 - MacOs: mac_install.sh
