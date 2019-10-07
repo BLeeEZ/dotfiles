@@ -33,7 +33,7 @@ if [ "$OS" == "Darwin" ]; then
 elif [ "$OS" == "Raspbian GNU/Linux" ]; then
     echo "Install for Debian"
     ./debian_install.sh
-elif [ "$OS" == "ManjaroLinux" ]; then
+elif [ "$OS" == "Manjaro Linux" ]; then
     echo "Install for Arch"
     ./arch_install.sh
 else
