@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SESSION=main
-tmux="tmux -2 -f tmux.conf"
+tmux="tmux"
 
 # if the session is already running, just attach to it.
 $tmux has-session -t $SESSION
