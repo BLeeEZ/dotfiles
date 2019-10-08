@@ -17,7 +17,8 @@ set softtabstop=4
 " UI Config
 "
 " show line numbers
-set relativenumber
+set number relativenumber
+set nu rnu
 " highlight current line
 set cursorline          
 " load filetype-specific indent files
