@@ -3,6 +3,8 @@ echo Install homebrew
 
 echo Install stow
 brew install stow
+echo Install tmux
+brew install tmux
 
 echo Preapre config files
 for i in bash bin ranger tmux zsh vim
