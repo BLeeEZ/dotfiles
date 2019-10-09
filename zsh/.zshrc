@@ -12,3 +12,6 @@ elif [ "$(expr substr $(uname -s) 1 10)" '==' "MINGW32_NT" ]; then
 elif [ "$(expr substr $(uname -s) 1 10)" '==' "MINGW64_NT" ]; then
     # Do something under 64 bits Windows NT platform
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
