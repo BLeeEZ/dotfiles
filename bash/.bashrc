@@ -117,3 +117,5 @@ alias grhh='git reset HEAD --hard'
 
 alias gst='git status'
 alias gsu='git submodule update'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

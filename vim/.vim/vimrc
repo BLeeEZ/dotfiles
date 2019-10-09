@@ -69,5 +69,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
-let g:airline_theme='simple'
+let g:airline_solarized_bg='dark'
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts = 1
 
