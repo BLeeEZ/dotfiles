@@ -69,7 +69,12 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
+" vim-airline config
 let g:airline_solarized_bg='dark'
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
+
+" fzf config
+command! -bang -nargs=? -complete=dir HFiles call fzf#vim#files(<q-args>, {'source': 'ag --hidden --ignore .git -g ""'}, <bang>0)
+map ; :HFiles<CR>
 
