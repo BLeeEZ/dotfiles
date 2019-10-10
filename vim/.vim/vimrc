@@ -11,6 +11,7 @@ colorscheme solarized
 "
 " number of visual spaces per TAB
 set tabstop=4       
+"
 " number of spaces in tab when editing
 set softtabstop=4   
 "
@@ -67,6 +68,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " vim-airline config
@@ -77,4 +81,7 @@ let g:airline_powerline_fonts = 1
 " fzf config
 command! -bang -nargs=? -complete=dir HFiles call fzf#vim#files(<q-args>, {'source': 'ag --hidden --ignore .git -g ""'}, <bang>0)
 map ; :HFiles<CR>
+
+" nerdtree config
+map <C-o> :NERDTreeToggle<CR>
 
