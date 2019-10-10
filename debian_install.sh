@@ -18,7 +18,7 @@ function ask_install() {
 
 ask_install "Install required packages?"
 if [[ $? -eq 1 ]]; then
-    sudo apt-get --quiet --assume-yes install git vim stow tmux silversearcher-ag
+    sudo apt-get --quiet --assume-yes install git vim-nox stow tmux silversearcher-ag
 fi
 
 ask_install "Install zsh-shell?"
