@@ -37,5 +37,5 @@ elif [ "$OS" == "Manjaro Linux" ]; then
     echo "Install for Arch"
     ./arch_install.sh
 else
-    echo "ERROR: Platform could not be termined: $OS"
+    echo "ERROR: Operating system could not be determined: $OS"
 fi
