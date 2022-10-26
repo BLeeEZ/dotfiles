@@ -8,5 +8,6 @@ mklink /D "%userprofile%\.zsh" "%userprofile%\dotfiles\zsh\.zsh"
 mklink /D "%userprofile%\bin" "%userprofile%\dotfiles\bin\bin"
 mklink    "%userprofile%\.minttyrc" "%userprofile%\dotfiles\mintty\.minttyrc"
 mklink    "%APPDATA%\Code\User\settings.json" "%userprofile%\dotfiles\vs-code\.config\Code - OSS\User\settings.json"
+mklink    "%userprofile%\_vsvimrc" "%userprofile%\dotfiles\vs\_vsvimrc"
 
 pause
