@@ -16,6 +16,8 @@ iotop,pacman,common,interactive I/O viewer
 tree,pacman,common,interactive I/O viewer
 ranger,pacman,common,command line file manager
 vim,pacman,common,terminal text editor
+bat,pacman,common,Clone of cat(1) with syntax highlighting and Git integration
+fzf,pacman,common,Command-line fuzzy finder written in Go
 xclip,pacman,common,share tmux clipboard with OS
 the_silver_searcher,pacman,common,code searching tool (ag)
 firefox,pacman,common,internet browser
