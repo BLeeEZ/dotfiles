@@ -30,12 +30,12 @@ fi
 if [ "$OS" == "Darwin" ]; then
     echo "Install for MacOs"
     ./mac_install.sh
-elif [ "$OS" == "Raspbian GNU/Linux" ]; then
+elif [ "$OS" == "Raspbian GNU/Linux" ] | [ "$OS" == "Debian GNU/Linux" ]; then
     echo "Install for Debian"
     ./debian_install.sh
 elif [ "$OS" == "Manjaro Linux" ]; then
     echo "Install for Arch"
     ./arch_install.sh
 else
-    echo "ERROR: Platform could not be termined: $OS"
+    echo "ERROR: Operating system could not be determined: $OS"
 fi

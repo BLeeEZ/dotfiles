@@ -1,0 +1,24 @@
+" install the following extensions
+" - https://github.com/VsVim/VsVim
+" - https://github.com/zastrowm/vs-NavigateTabGroups
+
+set number relativenumber
+
+" set leader key
+let mapleader=","
+
+" navigations with g prefix
+map gi :vsc Edit.GoToImplementation<CR>
+map gr :vsc Edit.FindAllReferences<CR>
+map gp :vsc Edit.PeekDefinition<CR>
+map gf :vsc EditorContextMenus.CodeWindow.PeekHeaderCodeFile<CR>
+map gc :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<CR>
+map gw<Left> :vsc Tools.NavigateTabGroups.Previous<CR>
+map gw<Right> :vsc Tools.NavigateTabGroups.Next<CR>
+
+" jump between compilation errors
+nnoremap <leader>e :vsc View.NextError<CR>
+nnoremap <leader>E :vsc View.PreviousError<CR>
+
+" open the change parameter window, a bit fake because it's not a text-object
+nnoremap cia :vsc Refactor.ReorderParameters<CR>
